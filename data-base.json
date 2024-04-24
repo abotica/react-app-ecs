@@ -1,0 +1,77 @@
+{
+  "radionice": [
+    {
+      "id": "9812677e-93fb-4b7f-bf23-ae80ee798709",
+      "ime": "JuniorDev React",
+      "datum": "2024-04-29",
+      "predavaci": [
+        "Ana Anic"
+      ],
+      "opis": "Ovo je opis!",
+      "tema": "React",
+      "tezina": "Junior",
+      "broj_prijava": 17
+    },
+    {
+      "id": "d839fc18-9ce8-4e4f-9998-4cbea7a9d645",
+      "ime": "hgfuytgfu",
+      "datum": "2024-04-28",
+      "predavaci": [
+        ""
+      ],
+      "opis": "jugyhbyiuhgbi",
+      "tema": "Express",
+      "tezina": "Mid",
+      "broj_prijava": 2
+    }
+  ],
+  "predavaci": [
+    {
+      "id": "predavac_1",
+      "ime": "Predavac 1",
+      "biografija": "Biografija predavaca 1",
+      "organizacija": "organizacija_1",
+      "teme": [
+        "React"
+      ]
+    }
+  ],
+  "organizacije": [
+    {
+      "id": "organizacija_1",
+      "ime": "Organizacija 1",
+      "opis": "Opis organizacije 1",
+      "radionice": [
+        "radionica_1"
+      ]
+    }
+  ],
+  "tezine": [
+		{
+			"id": "junior",
+			"ime": "Junior"
+		},
+		{
+			"id": "mid",
+			"ime": "Mid"
+		},
+		{
+			"id": "senior",
+			"ime": "Senior"
+		}
+	],
+	"teme": [
+		{
+			"id": "react",
+			"ime": "React"
+		},
+		{
+			"id": "express",
+			"ime": "Express"
+		},
+		{
+			"id": "next_js",
+			"ime": "Next.js"
+		}
+	]
+}
