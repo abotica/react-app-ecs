@@ -7,7 +7,7 @@ export default {
         "navbar-black": "#101415",
         "edit-yellow": "#DBAF52",
         "edit-blue": "#0088AF",
-      }
+      },
     },
   },
   plugins: [],

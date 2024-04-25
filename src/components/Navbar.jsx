@@ -20,17 +20,17 @@ function Navbar() {
 
             <div className='flex justify-end items-center'>
                 <ul className='flex items-center text-white'>
-                    <li>
-                        <Link className='px-3' to={"/"}>Naslovnica</Link>
+                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                        <Link to={"/"}>Naslovnica</Link>
                     </li>
-                    <li>
-                        <Link className='px-3' to={"/workshops"}>Radionice</Link>
+                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                        <Link to={"/workshops"}>Radionice</Link>
                     </li>
-                    <li>
-                        <Link className='px-3' to={"/lecturers"}>Predavači</Link>
+                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                        <Link to={"/lecturers"}>Predavači</Link>
                     </li>
-                    <li>
-                        {isAdmin && <Link className='px-3' to={"/administration"}>Administracija</Link>}
+                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                        {isAdmin && <Link to={"/administration"}>Administracija</Link>}
                     </li>
                 </ul>
                 <ToggleButton />
