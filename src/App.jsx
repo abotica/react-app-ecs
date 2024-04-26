@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import AdminContext from "./contexts/AdminContext"
 import ModalsContext from './contexts/ModalsContext'
+import UrlContext from './contexts/UrlContext'
 
 import HomePage from "./pages/HomePage"
 import WorkshopsPage from "./pages/WorkshopsPage"
@@ -15,7 +16,11 @@ import LecturersAdminPage from "./pages/subpages/LecturersAdminPage"
 
 
 function App() {
-  const URL = "http://192.168.0.68:3000"
+  const baseURL = "http://192.168.0.68:3000"
+  const workshopsURL = `${baseURL}/radionice`
+  const lecturersURL = `${baseURL}/predavaci`
+  const organizationsURL = `${baseURL}/organizacije`
+
   const [isAdmin, setIsAdmin] = useState(false)
 
   const [showWorkshopsModal, setShowWorkshopsModal] = useState(false)
@@ -24,16 +29,18 @@ function App() {
     <>
       <AdminContext.Provider value={{ isAdmin: isAdmin, setIsAdmin: setIsAdmin }}>
         <ModalsContext.Provider value={{ showWorkshopsModal: showWorkshopsModal, setShowWorkshopsModal: setShowWorkshopsModal }}>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='workshops' element={<WorkshopsPage />} />
-            <Route path='lecturers' element={<LecturersPage />} />
-            <Route path='administration' element={<AdministrationPage />}>
-              <Route path="workshopsAdmin" element={<WorkshopsAdminPage />} />
-              <Route path='organizationsAdmin' element={<OrganizationsAdminPage />} />
-              <Route path='lecturersAdmin' element={<LecturersAdminPage />} />
-            </Route>
-          </Routes>
+          <UrlContext.Provider value={{ baseURL: baseURL, workshopsURL: workshopsURL, lecturersURL: lecturersURL, organizationsURL: organizationsURL }}>
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='workshops' element={<WorkshopsPage />} />
+              <Route path='lecturers' element={<LecturersPage />} />
+              <Route path='administration' element={<AdministrationPage />}>
+                <Route path="workshopsAdmin" element={<WorkshopsAdminPage />} />
+                <Route path='organizationsAdmin' element={<OrganizationsAdminPage />} />
+                <Route path='lecturersAdmin' element={<LecturersAdminPage />} />
+              </Route>
+            </Routes>
+          </UrlContext.Provider>
         </ModalsContext.Provider>
       </AdminContext.Provider>
     </>
