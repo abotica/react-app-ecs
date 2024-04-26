@@ -23,6 +23,113 @@
       "tema": "Express",
       "tezina": "Mid",
       "broj_prijava": 2
+    },
+    {
+      "id": "bded0c62-d8d5-4233-b45d-2886ed475ff0",
+      "name": "",
+      "date": "",
+      "lecturers": [],
+      "description": "",
+      "topic": "",
+      "difficulty": ""
+    },
+    {
+      "id": "bded0c62-d8d5-4233-b45d-2886ed475ff0",
+      "name": "",
+      "date": "",
+      "lecturers": [],
+      "description": "",
+      "topic": "",
+      "difficulty": ""
+    },
+    {
+      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
+      "name": "",
+      "date": "",
+      "lecturers": [],
+      "description": "",
+      "topic": "",
+      "difficulty": ""
+    },
+    {
+      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
+      "name": "",
+      "date": "",
+      "lecturers": [],
+      "description": "",
+      "topic": "",
+      "difficulty": ""
+    },
+    {
+      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
+      "name": "",
+      "date": "",
+      "lecturers": [],
+      "description": "",
+      "topic": {
+        "value": "express",
+        "label": "Express"
+      },
+      "difficulty": ""
+    },
+    {
+      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
+      "name": "",
+      "date": "",
+      "lecturers": [
+        {
+          "value": "predavac_2",
+          "label": "Predavac 2"
+        }
+      ],
+      "description": "",
+      "topic": {
+        "value": "express",
+        "label": "Express"
+      },
+      "difficulty": ""
+    },
+    {
+      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
+      "name": "",
+      "date": "",
+      "lecturers": [
+        {
+          "value": "predavac_2",
+          "label": "Predavac 2"
+        },
+        {
+          "value": "predavac_1",
+          "label": "Predavac 1"
+        }
+      ],
+      "description": "",
+      "topic": {
+        "value": "express",
+        "label": "Express"
+      },
+      "difficulty": ""
+    },
+    {
+      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
+      "name": "",
+      "date": "",
+      "lecturers": [
+        {
+          "value": "predavac_2",
+          "label": "Predavac 2"
+        },
+        {
+          "value": "predavac_1",
+          "label": "Predavac 1"
+        }
+      ],
+      "description": "",
+      "topic": {
+        "value": "react",
+        "label": "React"
+      },
+      "difficulty": ""
     }
   ],
   "predavaci": [
@@ -56,31 +163,31 @@
     }
   ],
   "tezine": [
-		{
-			"id": "junior",
-			"ime": "Junior"
-		},
-		{
-			"id": "mid",
-			"ime": "Mid"
-		},
-		{
-			"id": "senior",
-			"ime": "Senior"
-		}
-	],
-	"teme": [
-		{
-			"id": "react",
-			"ime": "React"
-		},
-		{
-			"id": "express",
-			"ime": "Express"
-		},
-		{
-			"id": "next_js",
-			"ime": "Next.js"
-		}
-	]
+    {
+      "id": "junior",
+      "ime": "Junior"
+    },
+    {
+      "id": "mid",
+      "ime": "Mid"
+    },
+    {
+      "id": "senior",
+      "ime": "Senior"
+    }
+  ],
+  "teme": [
+    {
+      "id": "react",
+      "ime": "React"
+    },
+    {
+      "id": "express",
+      "ime": "Express"
+    },
+    {
+      "id": "next_js",
+      "ime": "Next.js"
+    }
+  ]
 }

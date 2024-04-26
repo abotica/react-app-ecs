@@ -12,16 +12,20 @@ import { v4 as uuidv4 } from 'uuid'
 import Input from './ui/Input'
 import Select from 'react-select'
 import LoadingSpinner from './ui/LoadingSpinner'
+import Button from './ui/Button'
+import ModalAffirmationScreen from './ModalAffirmationScreen'
 
 
 function AddWorkshopsModal({ setShowWorkshopsModal }) {
 
   // getting the URL for fetching lecturers from the API
-  const { lecturersURL } = useContext(UrlContext)
+  const { lecturersURL, workshopsURL } = useContext(UrlContext)
 
   // fetching lecturers from the API
   const lecturers = useFetch(lecturersURL, "GET", {})
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  
   // state for workshop object used for creating a new workshop and sending it to the API
   const [workshop, setWorkshop] = useState(
     {
@@ -34,6 +38,7 @@ function AddWorkshopsModal({ setShowWorkshopsModal }) {
       difficulty: ''
     }
   )
+
 
   // options for select inputs
   const lecturerOptions = useCreateOptions(lecturers.data)
@@ -49,28 +54,40 @@ function AddWorkshopsModal({ setShowWorkshopsModal }) {
     setShowWorkshopsModal(false)
   }
   function handleOnChange(e) {
-    e.target.value
+    setWorkshop({
+      ...workshop,
+      [e.target.name]: e.target.value
+    })
   }
 
+  function handleOnChangeSelect(name, selectedOption) {
+    setWorkshop({
+      ...workshop,
+      [name]: selectedOption
+    })
+  }
+
+  useEffect(() => { }, [])
+
   return (
-    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm'>
-      <div className='bg-white rounded-xl shadow p-6 transition-all relative [width:30%] [height:50%]'>
+    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm z-50'>
+      <div className='bg-white rounded-xl shadow p-4 transition-all relative [width:30%] h-fit'>
         <FontAwesomeIcon onClick={handleOnClick} icon={faXmark} size='2xl' className='absolute -top-3 -right-2 cursor-pointer text-edit-blue hover:scale-125 transition-transform' />
-        {/* <small className='text-gray-400'><i>ID: {uuidv4()}</i></small> */}
-        <h2 className='text-2xl font-bold text-center'>Dodaj radionicu</h2>
 
         {lecturers.isLoading
           ?
           <LoadingSpinner spin={lecturers.isLoading} />
           :
-          <form onSubmit={(e) => e.preventDefault()}>
-            <Input type='text' placeholder='Naziv radionice' />
-            <Input type='date' placeholder='Datum održavanja' />
-            <Select className='my-4' options={topicsOptions} placeholder='Tema radionice' />
-            <Select className='my-4' isMulti options={lecturerOptions} placeholder='Predavači radionice' />
-            <Input type='textarea' placeholder='Opis radionice' />
-          </form>
-        }
+          <form className='flex flex-col h-max w-full' onSubmit={e => {e.preventDefault(); }}>
+            <h2 className='text-2xl font-bold text-center'>Dodaj radionicu</h2>
+            <Input type='text' name='name' value={workshop.name} onChange={handleOnChange} placeholder='Naziv radionice' />
+            <Input type='date' name='date' value={workshop.date} onChange={handleOnChange} placeholder='Datum održavanja' />
+            <Select className='my-4' value={workshop.topic} onChange={selectedOption => handleOnChangeSelect('topic', selectedOption)} options={topicsOptions} placeholder='Tema radionice' required />
+            <Select className='my-4' value={workshop.lecturers} onChange={selectedOption => handleOnChangeSelect('lecturers', selectedOption)} isMulti options={lecturerOptions} placeholder='Predavači radionice' required />
+            <Input type='textarea' name='description' value={workshop.description} onChange={handleOnChange} placeholder='Opis radionice' />
+            <Button>Dodaj</Button>
+          </form> 
+        } 
       </div>
     </div>
   )

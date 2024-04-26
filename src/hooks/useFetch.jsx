@@ -11,33 +11,34 @@ function useFetch(url, method, body) {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  useEffect(() => {
+  async function fetchData() {
 
-    async function fetchData() {
+    try {
+      const response = await axios({
+        url: url,
+        method: method,
+        data: body
+      })
 
-      try {
-        const response = await axios({
-          url: url,
-          method: method,
-          data: body
-        })
+      const data = await response?.data
 
-        const data = await response?.data
-
-        setData(data)
-        setIsLoading(false)
-      }
-      catch (error) {
-        setError(error)
-        setIsLoading(false)
-      }
-
+      setData(data)
+      setIsLoading(false)
     }
+    catch (error) {
+      setError(error)
+      setIsLoading(false)
+    }
+
+  }
+
+  useEffect(() => {
 
     fetchData()
 
   }, [url, method, body])
-  
+
+
   return { data, isLoading, error }
 }
 
