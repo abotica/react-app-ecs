@@ -34,6 +34,15 @@
       "teme": [
         "React"
       ]
+    },
+    {
+      "id": "predavac_2",
+      "ime": "Predavac 2",
+      "biografija": "Biografija predavaca 2",
+      "organizacija": "organizacija_2",
+      "teme": [
+        "React"
+      ]
     }
   ],
   "organizacije": [

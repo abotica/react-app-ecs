@@ -1,11 +1,18 @@
-import React from 'react'
+import { useMemo } from 'react';
 
-function useCreateOptions(arrayOfObjects) {
- const options = arrayOfObjects.map(object => { 
-        return {value: object.id, label: object.name}
-      })
+// useCreateOptions is a custom hook that takes an array of objects and returns an array of objects with value and label properties
+// it is very useful when you want to create options for a select input especially when data is fetched from an API
+function useCreateOptions(data) {
+  return useMemo(() => {
+    if (!data) {
+      return []
+    }
 
-      return options
+    return data.map(item => ({
+      value: item.id,
+      label: item.ime,
+    }))
+  }, [data]);
 }
 
-export default useCreateOptions
+export default useCreateOptions;
