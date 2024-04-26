@@ -2,7 +2,7 @@ import {useContext} from 'react'
 import Select from 'react-select'
 
 import Table from '../../components/Table'
-import AddWorkshopsModal from '../../components/AddWorkshopsModal'
+import WorkshopsModal from '../../components/WorkshopsModal'
 
 import ModalsContext from '../../contexts/ModalsContext'
 
@@ -11,7 +11,7 @@ function WorkshopsAdminPage() {
     
   return (
     <div className='h-fit'>
-        {showWorkshopsModal && <AddWorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} />}
+        {showWorkshopsModal && <WorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} />}
         <Table />
     </div>
   )

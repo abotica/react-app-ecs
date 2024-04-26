@@ -1,133 +1,36 @@
 {
   "radionice": [
     {
-      "id": "9812677e-93fb-4b7f-bf23-ae80ee798709",
-      "ime": "JuniorDev React",
-      "datum": "2024-04-29",
-      "predavaci": [
-        "Ana Anic"
+      "id": "c37a3581-b9ee-4cea-80fc-64bc4294fd84",
+      "name": "React JuniorDev",
+      "date": "2024-04-29",
+      "lecturers": [
+        {
+          "id": "predavac_2",
+          "name": "Predavac 2"
+        }
       ],
-      "opis": "Ovo je opis!",
-      "tema": "React",
-      "tezina": "Junior",
-      "broj_prijava": 17
-    },
-    {
-      "id": "d839fc18-9ce8-4e4f-9998-4cbea7a9d645",
-      "ime": "hgfuytgfu",
-      "datum": "2024-04-28",
-      "predavaci": [
-        ""
-      ],
-      "opis": "jugyhbyiuhgbi",
-      "tema": "Express",
-      "tezina": "Mid",
-      "broj_prijava": 2
-    },
-    {
-      "id": "bded0c62-d8d5-4233-b45d-2886ed475ff0",
-      "name": "",
-      "date": "",
-      "lecturers": [],
-      "description": "",
-      "topic": "",
-      "difficulty": ""
-    },
-    {
-      "id": "bded0c62-d8d5-4233-b45d-2886ed475ff0",
-      "name": "",
-      "date": "",
-      "lecturers": [],
-      "description": "",
-      "topic": "",
-      "difficulty": ""
-    },
-    {
-      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
-      "name": "",
-      "date": "",
-      "lecturers": [],
-      "description": "",
-      "topic": "",
-      "difficulty": ""
-    },
-    {
-      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
-      "name": "",
-      "date": "",
-      "lecturers": [],
-      "description": "",
-      "topic": "",
-      "difficulty": ""
-    },
-    {
-      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
-      "name": "",
-      "date": "",
-      "lecturers": [],
-      "description": "",
+      "description": "Opis",
       "topic": {
-        "value": "express",
-        "label": "Express"
+        "id": "express",
+        "name": "Express"
       },
       "difficulty": ""
     },
     {
-      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
-      "name": "",
-      "date": "",
+      "id": "c37a3581-b9ee-4cea-80fc-64bc4294fd84",
+      "name": "React JuniorDev",
+      "date": "2024-04-29",
       "lecturers": [
         {
-          "value": "predavac_2",
-          "label": "Predavac 2"
+          "id": "predavac_2",
+          "name": "Predavac 2"
         }
       ],
-      "description": "",
+      "description": "Opis",
       "topic": {
-        "value": "express",
-        "label": "Express"
-      },
-      "difficulty": ""
-    },
-    {
-      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
-      "name": "",
-      "date": "",
-      "lecturers": [
-        {
-          "value": "predavac_2",
-          "label": "Predavac 2"
-        },
-        {
-          "value": "predavac_1",
-          "label": "Predavac 1"
-        }
-      ],
-      "description": "",
-      "topic": {
-        "value": "express",
-        "label": "Express"
-      },
-      "difficulty": ""
-    },
-    {
-      "id": "972be7fe-be65-48f4-b5a2-19d12036a6c5",
-      "name": "",
-      "date": "",
-      "lecturers": [
-        {
-          "value": "predavac_2",
-          "label": "Predavac 2"
-        },
-        {
-          "value": "predavac_1",
-          "label": "Predavac 1"
-        }
-      ],
-      "description": "",
-      "topic": {
-        "value": "react",
-        "label": "React"
+        "id": "express",
+        "name": "Express"
       },
       "difficulty": ""
     }
