@@ -7,14 +7,20 @@ import Button from './ui/Button'
 import Input from './ui/Input'
 import Select from 'react-select'
 
-function WorkshopsModalForm({ isLoading, lecturers, workshop, setWorkshop, setIsSubmitting }) {
+function WorkshopsModalForm({ isLoading, lecturers, workshop, setWorkshop, setIsSubmitting, handlePost }) {
 
     // options for select inputs
-    const lecturerOptions = useCreateOptions(lecturers.data)
+    const lecturerOptions = useCreateOptions(lecturers)
     const topicsOptions = [
         { value: "react", label: "React" },
         { value: "express", label: "Express" },
         { value: "next_js", label: "Next.js" },
+        { value: "wordpress", label: "Wordpress" },
+    ]
+    const difficultyOptions = [
+        {value: "junior", label: "Junior"},
+        {value: "mid", label: "Mid"},
+        {value: "senior", label: "Senior"}
     ]
 
     // functions for handling events
@@ -49,11 +55,22 @@ function WorkshopsModalForm({ isLoading, lecturers, workshop, setWorkshop, setIs
         console.log(workshop)
     }
 
+    function handleOnChangeSelectDifficulty(selectedOption) {
+        setWorkshop({
+            ...workshop,
+            difficulty: {
+                id: selectedOption.value,
+                name: selectedOption.label
+            }
+        })
+    }
+
     return isLoading ? <LoadingSpinner spin={isLoading} /> :
-        <form className='flex flex-col h-max w-full' onSubmit={e => { e.preventDefault(); setIsSubmitting(true) }}>
+        <form className='flex flex-col h-max w-full' onSubmit={e => { e.preventDefault(); setIsSubmitting(true); handlePost() }}>
             <h2 className='text-2xl font-bold text-center'>Dodaj radionicu</h2>
             <Input type='text' name='name' value={workshop.name} handleOnChange={handleOnChange} placeholder='Naziv radionice' />
             <Input type='date' name='date' value={workshop.date} handleOnChange={handleOnChange} placeholder='Datum održavanja' />
+            <Select className='my-4' value={workshop.difficulty.value} onChange={selectedOption => handleOnChangeSelectDifficulty(selectedOption)} options={difficultyOptions} placeholder='Težina radionice' required />
             <Select className='my-4' value={workshop.topic.value} onChange={selectedOption => handleOnChangeSelectTopic(selectedOption)} options={topicsOptions} placeholder='Tema radionice' required />
             <Select className='my-4' value={workshop.lecturers.name} onChange={selectedOptions => handleOnChangeSelectLecturers(selectedOptions)} isMulti options={lecturerOptions} placeholder='Predavači radionice' required />
             <Input type='textarea' name='description' value={workshop.description} handleOnChange={handleOnChange} placeholder='Opis radionice' />

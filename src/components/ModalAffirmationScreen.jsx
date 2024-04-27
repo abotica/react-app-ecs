@@ -1,14 +1,13 @@
-import React from 'react'
-import useFetch from '../hooks/useFetch'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import LoadingSpinner from './ui/LoadingSpinner'
+import { faCheckCircle, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
 
-function ModalAffirmationScreen({workshopsURL, workshop}) {
-  const {isLoading, error} = useFetch(workshopsURL, "POST", workshop)
+function ModalAffirmationScreen({error, success, isLoading}) {
 
   return (
     <div className='w-max h-max'>
-      {isLoading ? <LoadingSpinner spin={isLoading} /> : error ? <p>Nešto je pošlo po krivu</p> : <p>Radionica je uspješno dodana!</p> }
+      {isLoading ? <LoadingSpinner spin={isLoading} /> : error ? <p><FontAwesomeIcon className='text-red-500' size='2xl' icon={faXmarkCircle} />{error}</p> : success ? <p><FontAwesomeIcon className='text-green-500' size='2xl' icon={faCheckCircle} />{success}</p> : null}
     </div>
   )
 }

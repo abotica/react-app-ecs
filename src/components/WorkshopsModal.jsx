@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useContext, useState } from 'react'
-import useFetch from '../hooks/useFetch'
+
+import axios from 'axios'
 
 import UrlContext from '../contexts/UrlContext'
 
@@ -13,15 +14,16 @@ import ModalAffirmationScreen from './ModalAffirmationScreen'
 import WorkshopsModalForm from './WorkshopsModalForm'
 
 
-function WorkshopsModal({ setShowWorkshopsModal }) {
+function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
 
   // getting the URL for fetching lecturers from the API
   const { lecturersURL, workshopsURL } = useContext(UrlContext)
 
-  // fetching lecturers from the API
-  const lecturers = useFetch(lecturersURL, "GET", {})
-
+  const [isLoading, setIsLoading] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [lecturers, setLecturers] = useState([])
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
 
   // state for workshop object used for creating a new workshop and sending it to the API
   const [workshop, setWorkshop] = useState(
@@ -32,7 +34,8 @@ function WorkshopsModal({ setShowWorkshopsModal }) {
       lecturers: [],
       description: '',
       topic: {},
-      difficulty: ''
+      difficulty: '',
+      enrolled: 0,
     }
   )
 
@@ -41,6 +44,30 @@ function WorkshopsModal({ setShowWorkshopsModal }) {
     setShowWorkshopsModal(false)
   }
 
+  useEffect(() => {
+    axios.get(lecturersURL)
+      .then(response => {
+        setLecturers(response.data)
+        setIsLoading(false)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
+
+  
+  function handlePost() {
+    axios.post(workshopsURL, workshop)
+      .then(() => {
+        setIsLoading(false)
+        setSuccess('Radionica je uspješno dodana!')
+        handleDataRefresh()
+      })
+      .catch(() => {
+        setIsLoading(false)
+        setError('Nešto je pošlo po krivu')
+      })
+  }
 
 
   return (
@@ -48,7 +75,7 @@ function WorkshopsModal({ setShowWorkshopsModal }) {
       <div className='bg-white rounded-xl shadow p-4 transition-all relative [width:30%] h-fit'>
         <FontAwesomeIcon onClick={handleOnClick} icon={faXmark} size='2xl' className='absolute -top-3 -right-2 cursor-pointer text-edit-blue hover:scale-125 transition-transform' />
 
-        {isSubmitting ? <ModalAffirmationScreen workshopsURL={workshopsURL} workshop={workshop} /> : <WorkshopsModalForm isLoading={lecturers.isLoading} lecturers={lecturers} workshop={workshop} setWorkshop={setWorkshop} setIsSubmitting={setIsSubmitting} />}
+        {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <WorkshopsModalForm isLoading={isLoading} lecturers={lecturers} workshop={workshop} setWorkshop={setWorkshop} setIsSubmitting={setIsSubmitting} handlePost={handlePost}/>}
 
       </div>
     </div>

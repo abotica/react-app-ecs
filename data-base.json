@@ -1,38 +1,71 @@
 {
   "radionice": [
     {
-      "id": "c37a3581-b9ee-4cea-80fc-64bc4294fd84",
+      "id": "331fda07-daaa-4873-a233-c6b22586f0b7",
       "name": "React JuniorDev",
-      "date": "2024-04-29",
+      "date": "2024-04-28",
       "lecturers": [
         {
-          "id": "predavac_2",
-          "name": "Predavac 2"
+          "id": "predavac_1",
+          "name": "Predavac 1"
         }
       ],
-      "description": "Opis",
+      "description": "Radionica",
       "topic": {
-        "id": "express",
-        "name": "Express"
+        "id": "react",
+        "name": "React"
       },
-      "difficulty": ""
+      "difficulty": {
+        "id": "junior",
+        "name": "Junior"
+      },
+      "enrolled": 0
     },
     {
-      "id": "c37a3581-b9ee-4cea-80fc-64bc4294fd84",
-      "name": "React JuniorDev",
+      "id": "1301d613-f7b9-47c0-987c-a75c09ea8058",
+      "name": "Wordpress SeniorDev",
       "date": "2024-04-29",
       "lecturers": [
+        {
+          "id": "predavac_1",
+          "name": "Predavac 1"
+        },
         {
           "id": "predavac_2",
           "name": "Predavac 2"
         }
       ],
-      "description": "Opis",
+      "description": "Ovo je Wordpress SeniorDev",
+      "topic": {
+        "id": "wordpress",
+        "name": "Wordpress"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 0
+    },
+    {
+      "id": "cf65e8d4-3fe3-41fa-b92f-9809e56ffd97",
+      "name": "Express",
+      "date": "2024-04-30",
+      "lecturers": [
+        {
+          "id": "predavac_1",
+          "name": "Predavac 1"
+        }
+      ],
+      "description": "Express",
       "topic": {
         "id": "express",
         "name": "Express"
       },
-      "difficulty": ""
+      "difficulty": {
+        "id": "mid",
+        "name": "Mid"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [

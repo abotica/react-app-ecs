@@ -1,20 +1,14 @@
 import React, { Children } from 'react'
 import TableRow from './TableRow'
 
-function Table() {
+function Table({dataArray, showDataProperties}) {
 
 
 
     return (
         <table className='w-full h-full border-spacing-1'>
-            <thead>
-                <TableRow />
-            </thead>
             <tbody>
-                <TableRow />
-                <TableRow />
-                <TableRow />
-                <TableRow />
+                {dataArray.map(data => <TableRow key={data.id} rowData={data} showDataProperties={showDataProperties}/>)}
             </tbody>
         </table>
     )
