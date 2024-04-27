@@ -7,12 +7,14 @@ import axios from 'axios'
 
 import ModalsContext from '../../contexts/ModalsContext'
 import UrlContext from '../../contexts/UrlContext'
+import DeleteAffirmationModal from '../../components/DeleteAffirmationModal'
 
 function WorkshopsAdminPage() {
   const { showWorkshopsModal, setShowWorkshopsModal } = useContext(ModalsContext)
   const { workshopsURL } = useContext(UrlContext)
-
+  
   const [workshops, setWorkshops] = useState([])
+  const [showDeleteAffirmationModal, setShowDeleteAffirmationModal] = useState(false)
 
   const workshopsShowDataProperties = ['name', 'date', 'enrolled']
   
@@ -39,7 +41,8 @@ function WorkshopsAdminPage() {
   return (
     <div className='h-fit'>
         {showWorkshopsModal && <WorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} handleDataRefresh={handleDataRefresh}/>}
-        <Table dataArray={workshops} showDataProperties={workshopsShowDataProperties}/>
+        {showDeleteAffirmationModal && <DeleteAffirmationModal setShowDeleteAffirmationModal={setShowDeleteAffirmationModal}/>}
+        <Table dataArray={workshops} showDataProperties={workshopsShowDataProperties} handleDataRefresh={handleDataRefresh} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal}/>
     </div>
   )
 }

@@ -5,13 +5,11 @@ import axios from 'axios'
 
 import UrlContext from '../contexts/UrlContext'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
-
 import { v4 as uuidv4 } from 'uuid'
 
 import ModalAffirmationScreen from './ModalAffirmationScreen'
 import WorkshopsModalForm from './WorkshopsModalForm'
+import ModalLayout from '../layout/ModalLayout'
 
 
 function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
@@ -40,7 +38,7 @@ function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
   )
 
   // handle for closing the modal
-  function handleOnClick() {
+  function handleCloseModal() {
     setShowWorkshopsModal(false)
   }
 
@@ -55,7 +53,7 @@ function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
       })
   }, [])
 
-  
+
   function handlePost() {
     axios.post(workshopsURL, workshop)
       .then(() => {
@@ -71,14 +69,13 @@ function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
 
 
   return (
-    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm z-50'>
-      <div className='bg-white rounded-xl shadow p-4 transition-all relative [width:30%] h-fit'>
-        <FontAwesomeIcon onClick={handleOnClick} icon={faXmark} size='2xl' className='absolute -top-3 -right-2 cursor-pointer text-edit-blue hover:scale-125 transition-transform' />
+    <ModalLayout handleCloseModal={handleCloseModal}>
 
-        {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <WorkshopsModalForm isLoading={isLoading} lecturers={lecturers} workshop={workshop} setWorkshop={setWorkshop} setIsSubmitting={setIsSubmitting} handlePost={handlePost}/>}
 
-      </div>
-    </div>
+      {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading} /> : <WorkshopsModalForm isLoading={isLoading} lecturers={lecturers} workshop={workshop} setWorkshop={setWorkshop} setIsSubmitting={setIsSubmitting} handlePost={handlePost} />}
+
+
+    </ModalLayout>
   )
 }
 

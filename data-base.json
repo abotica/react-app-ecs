@@ -1,62 +1,16 @@
 {
   "radionice": [
     {
-      "id": "331fda07-daaa-4873-a233-c6b22586f0b7",
+      "id": "eb7fb960-bc3e-41f2-aa65-f976f912feb6",
       "name": "React JuniorDev",
-      "date": "2024-04-28",
+      "date": "2024-04-25",
       "lecturers": [
-        {
-          "id": "predavac_1",
-          "name": "Predavac 1"
-        }
-      ],
-      "description": "Radionica",
-      "topic": {
-        "id": "react",
-        "name": "React"
-      },
-      "difficulty": {
-        "id": "junior",
-        "name": "Junior"
-      },
-      "enrolled": 0
-    },
-    {
-      "id": "1301d613-f7b9-47c0-987c-a75c09ea8058",
-      "name": "Wordpress SeniorDev",
-      "date": "2024-04-29",
-      "lecturers": [
-        {
-          "id": "predavac_1",
-          "name": "Predavac 1"
-        },
         {
           "id": "predavac_2",
           "name": "Predavac 2"
         }
       ],
-      "description": "Ovo je Wordpress SeniorDev",
-      "topic": {
-        "id": "wordpress",
-        "name": "Wordpress"
-      },
-      "difficulty": {
-        "id": "senior",
-        "name": "Senior"
-      },
-      "enrolled": 0
-    },
-    {
-      "id": "cf65e8d4-3fe3-41fa-b92f-9809e56ffd97",
-      "name": "Express",
-      "date": "2024-04-30",
-      "lecturers": [
-        {
-          "id": "predavac_1",
-          "name": "Predavac 1"
-        }
-      ],
-      "description": "Express",
+      "description": "aSadSS",
       "topic": {
         "id": "express",
         "name": "Express"
