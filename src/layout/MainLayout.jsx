@@ -3,9 +3,9 @@ import Navbar from '../components/Navbar'
 
 function MainLayout({children}) {
   return (
-    <div className='relative '>
+    <div className='relative'>
         <Navbar />
-        <div>{children}</div>
+        {children}
     </div>
   )
 }

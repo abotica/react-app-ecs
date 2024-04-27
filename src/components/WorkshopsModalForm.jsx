@@ -14,7 +14,7 @@ function WorkshopsModalForm({ isLoading, lecturers, workshop, setWorkshop, setIs
     const topicsOptions = [
         { value: "react", label: "React" },
         { value: "express", label: "Express" },
-        { value: "next_js", label: "Next.js" },
+        { value: "php", label: "PHP" },
         { value: "wordpress", label: "Wordpress" },
     ]
     const difficultyOptions = [

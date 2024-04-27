@@ -1,27 +1,6 @@
 {
   "radionice": [
     {
-      "id": "25c601cf-4073-4204-90bc-c0421b7cf050",
-      "name": "Wordpress SeniorDev",
-      "date": "2024-04-25",
-      "lecturers": [
-        {
-          "id": "predavac_2",
-          "name": "Predavac 2"
-        }
-      ],
-      "description": "resrgegeGHAGweq",
-      "topic": {
-        "id": "next_js",
-        "name": "Next.js"
-      },
-      "difficulty": {
-        "id": "senior",
-        "name": "Senior"
-      },
-      "enrolled": 0
-    },
-    {
       "id": "f661c881-ae78-40ea-9f84-679dca307b74",
       "name": "React JuniorDev",
       "date": "2024-04-30",
@@ -44,7 +23,28 @@
         "id": "mid",
         "name": "Mid"
       },
-      "enrolled": 0
+      "enrolled": 3
+    },
+    {
+      "id": "611b8b5a-9ca4-438f-89a2-1a1a7601101d",
+      "name": "Wordpress",
+      "date": "2024-04-29",
+      "lecturers": [
+        {
+          "id": "predavac_2",
+          "name": "Predavac 2"
+        }
+      ],
+      "description": "Wordpress je zakon aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.",
+      "topic": {
+        "id": "wordpress",
+        "name": "Wordpress"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 2
     }
   ],
   "predavaci": [
