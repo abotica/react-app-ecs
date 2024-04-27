@@ -1,20 +1,8 @@
 import React, { useContext } from 'react'
 
 import Button from './ui/Button'
-import axios from 'axios'
 
-import UrlContext from '../contexts/UrlContext'
-
-function TableRow({ rowData, showDataProperties, handleDataRefresh, setShowDeleteAffirmationModal }) {
-  const { workshopsURL } = useContext(UrlContext)
-
-  function handleDelete() {
-    axios.delete(workshopsURL + `/${rowData.id}`)
-      .then(response => {
-        console.log(response)
-        handleDataRefresh()
-      })
-  }
+function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, setdeleteData}) {
 
   return (
     <tr className='border-b-2'>
@@ -22,7 +10,10 @@ function TableRow({ rowData, showDataProperties, handleDataRefresh, setShowDelet
       <td>
         <div className='flex justify-center'>
           <Button>Uredi</Button>
-          <Button onClick={() => setShowDeleteAffirmationModal(true)}>Izbriši</Button>
+          <Button onClick={() => {setShowDeleteAffirmationModal(true); setdeleteData({
+            id: rowData.id,
+            name: rowData.name
+          })}}>Izbriši</Button>
         </div>
       </td>
     </tr>

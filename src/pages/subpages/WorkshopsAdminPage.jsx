@@ -15,6 +15,10 @@ function WorkshopsAdminPage() {
   
   const [workshops, setWorkshops] = useState([])
   const [showDeleteAffirmationModal, setShowDeleteAffirmationModal] = useState(false)
+  const [deleteData, setdeleteData] = useState({
+    id: '',
+    name: ''
+  })
 
   const workshopsShowDataProperties = ['name', 'date', 'enrolled']
   
@@ -38,11 +42,19 @@ function WorkshopsAdminPage() {
     })
   }
 
+  function handleDelete() {
+    axios.delete(workshopsURL + `/${deleteData.id}`)
+      .then(response => {
+        console.log(response)
+        handleDataRefresh()
+      })
+  }
+
   return (
     <div className='h-fit'>
         {showWorkshopsModal && <WorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} handleDataRefresh={handleDataRefresh}/>}
-        {showDeleteAffirmationModal && <DeleteAffirmationModal setShowDeleteAffirmationModal={setShowDeleteAffirmationModal}/>}
-        <Table dataArray={workshops} showDataProperties={workshopsShowDataProperties} handleDataRefresh={handleDataRefresh} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal}/>
+        {showDeleteAffirmationModal && <DeleteAffirmationModal setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} handleDelete={handleDelete} dataName={deleteData.name}/>}
+        <Table dataArray={workshops} showDataProperties={workshopsShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setdeleteData={setdeleteData}/>
     </div>
   )
 }

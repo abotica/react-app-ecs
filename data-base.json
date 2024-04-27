@@ -1,8 +1,8 @@
 {
   "radionice": [
     {
-      "id": "eb7fb960-bc3e-41f2-aa65-f976f912feb6",
-      "name": "React JuniorDev",
+      "id": "25c601cf-4073-4204-90bc-c0421b7cf050",
+      "name": "Wordpress SeniorDev",
       "date": "2024-04-25",
       "lecturers": [
         {
@@ -10,7 +10,32 @@
           "name": "Predavac 2"
         }
       ],
-      "description": "aSadSS",
+      "description": "resrgegeGHAGweq",
+      "topic": {
+        "id": "next_js",
+        "name": "Next.js"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 0
+    },
+    {
+      "id": "f661c881-ae78-40ea-9f84-679dca307b74",
+      "name": "React JuniorDev",
+      "date": "2024-04-30",
+      "lecturers": [
+        {
+          "id": "predavac_2",
+          "name": "Predavac 2"
+        },
+        {
+          "id": "predavac_1",
+          "name": "Predavac 1"
+        }
+      ],
+      "description": "adASWDSDAS",
       "topic": {
         "id": "express",
         "name": "Express"
