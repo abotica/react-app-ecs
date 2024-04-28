@@ -24,11 +24,13 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false)
 
   const [showWorkshopsModal, setShowWorkshopsModal] = useState(false)
+  const [showOrganizationsModal, setShowOrganizationsModal] = useState(false)
+  const [showLecturersModal, setShowLecturersModal] = useState(false)
 
   return (
     <>
       <AdminContext.Provider value={{ isAdmin: isAdmin, setIsAdmin: setIsAdmin }}>
-        <ModalsContext.Provider value={{ showWorkshopsModal: showWorkshopsModal, setShowWorkshopsModal: setShowWorkshopsModal }}>
+        <ModalsContext.Provider value={{ showWorkshopsModal: showWorkshopsModal, setShowWorkshopsModal: setShowWorkshopsModal, showOrganizationsModal: showOrganizationsModal, setShowOrganizationsModal: setShowOrganizationsModal, showLecturersModal: showLecturersModal, setShowLecturersModal: setShowLecturersModal}}>
           <UrlContext.Provider value={{ baseURL: baseURL, workshopsURL: workshopsURL, lecturersURL: lecturersURL, organizationsURL: organizationsURL }}>
             <Routes>
               <Route path='/' element={<HomePage />} />

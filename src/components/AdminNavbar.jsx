@@ -9,7 +9,7 @@ import ModalsContext from '../contexts/ModalsContext'
 
 function AdminNavbar() {
 const location = useLocation()
-const {showWorkshopsModal, setShowWorkshopsModal} = useContext(ModalsContext)
+const {showWorkshopsModal, setShowWorkshopsModal, showOrganizationsModal, setShowOrganizationsModal, showLecturersModal, setShowLecturersModal} = useContext(ModalsContext)
 
 function handleOnClick(){
     switch(location.pathname){
@@ -17,9 +17,10 @@ function handleOnClick(){
             setShowWorkshopsModal(!showWorkshopsModal)
             break
         case '/administration/organizationsAdmin':
+            setShowOrganizationsModal(!showOrganizationsModal)
             break
         case '/administration/lecturersAdmin':
-            
+            setShowLecturersModal(!showLecturersModal)
             break
     }
 }

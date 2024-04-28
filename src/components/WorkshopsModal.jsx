@@ -70,11 +70,7 @@ function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
 
   return (
     <ModalLayout handleCloseModal={handleCloseModal}>
-
-
       {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading} /> : <WorkshopsModalForm isLoading={isLoading} lecturers={lecturers} workshop={workshop} setWorkshop={setWorkshop} setIsSubmitting={setIsSubmitting} handlePost={handlePost} />}
-
-
     </ModalLayout>
   )
 }

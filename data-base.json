@@ -26,31 +26,6 @@
       "enrolled": 3
     },
     {
-      "id": "aa301998-4391-4b07-9501-5e6b83652f09",
-      "name": "PHP",
-      "date": "2024-05-11",
-      "lecturers": [
-        {
-          "id": "predavac_1",
-          "name": "Predavac 1"
-        },
-        {
-          "id": "predavac_2",
-          "name": "Predavac 2"
-        }
-      ],
-      "description": "PHP je uzas",
-      "topic": {
-        "id": "php",
-        "name": "PHP"
-      },
-      "difficulty": {
-        "id": "mid",
-        "name": "Mid"
-      },
-      "enrolled": 1
-    },
-    {
       "id": "11f2d640-8f38-48f2-9e5f-b1c0ed6350f8",
       "name": "Wordpress",
       "date": "2024-04-30",
@@ -116,36 +91,75 @@
         "name": "Mid"
       },
       "enrolled": 0
+    },
+    {
+      "id": "ed3acbcb-0c81-4c35-86de-0aae87ea3184",
+      "name": "HHH",
+      "date": "2024-05-11",
+      "lecturers": [
+        {
+          "id": "predavac_2",
+          "name": "Predavac 2"
+        }
+      ],
+      "description": "neyyyy",
+      "topic": {
+        "id": "php",
+        "name": "PHP"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 1
     }
   ],
   "predavaci": [
     {
       "id": "predavac_1",
-      "ime": "Predavac 1",
-      "biografija": "Biografija predavaca 1",
-      "organizacija": "organizacija_1",
-      "teme": [
+      "name": "Predavac 1",
+      "bio": "Biografija predavaca 1",
+      "organization": "organizacija_1",
+      "topics": [
         "React"
       ]
     },
     {
       "id": "predavac_2",
-      "ime": "Predavac 2",
-      "biografija": "Biografija predavaca 2",
-      "organizacija": "organizacija_2",
-      "teme": [
+      "name": "Predavac 2",
+      "bio": "Biografija predavaca 2",
+      "organization": "organizacija_2",
+      "topics": [
         "React"
       ]
     }
   ],
   "organizacije": [
     {
-      "id": "organizacija_1",
-      "ime": "Organizacija 1",
-      "opis": "Opis organizacije 1",
-      "radionice": [
-        "radionica_1"
-      ]
+      "id": "095430d6-2a99-471b-9990-39be95f76e12",
+      "name": "Lorem Ipsum",
+      "workshops": [
+        {
+          "id": "f661c881-ae78-40ea-9f84-679dca307b74",
+          "name": "React JuniorDev"
+        },
+        {
+          "id": "ed3acbcb-0c81-4c35-86de-0aae87ea3184",
+          "name": "HHH"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "id": "6fe80659-d7a1-4970-aa91-62825380579c",
+      "name": "Pevex",
+      "workshops": [
+        {
+          "id": "bc4d6abb-0a8d-4ed9-9f8d-9e576e6d8524",
+          "name": "Wordpress"
+        }
+      ],
+      "description": ""
     }
   ],
   "tezine": [

@@ -10,7 +10,7 @@ function useCreateOptions(data) {
 
     return data.map(item => ({
       value: item.id,
-      label: item.ime,
+      label: item.name,
     }))
   }, [data]);
 }

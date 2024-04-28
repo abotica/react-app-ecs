@@ -65,14 +65,14 @@ function WorkshopsModalForm({ isLoading, lecturers, workshop, setWorkshop, setIs
         })
     }
 
-    return isLoading ? <LoadingSpinner spin={isLoading} /> :
+    return isLoading ? <LoadingSpinner spin={true} /> :
         <form className='flex flex-col h-max w-full' onSubmit={e => { e.preventDefault(); setIsSubmitting(true); handlePost() }}>
             <h2 className='text-2xl font-bold text-center'>Dodaj radionicu</h2>
             <Input type='text' name='name' value={workshop.name} handleOnChange={handleOnChange} placeholder='Naziv radionice' />
             <Input type='date' name='date' value={workshop.date} handleOnChange={handleOnChange} placeholder='Datum održavanja' />
-            <Select className='my-4' value={workshop.difficulty.value} onChange={selectedOption => handleOnChangeSelectDifficulty(selectedOption)} options={difficultyOptions} placeholder='Težina radionice' required />
-            <Select className='my-4' value={workshop.topic.value} onChange={selectedOption => handleOnChangeSelectTopic(selectedOption)} options={topicsOptions} placeholder='Tema radionice' required />
-            <Select className='my-4' value={workshop.lecturers.name} onChange={selectedOptions => handleOnChangeSelectLecturers(selectedOptions)} isMulti options={lecturerOptions} placeholder='Predavači radionice' required />
+            <Select className='my-4' value={workshop.difficulty.value} onChange={selectedOption => handleOnChangeSelectDifficulty(selectedOption)} options={difficultyOptions} placeholder='Težina radionice' menuPortalTarget={document.body} styles={{menuPortal: base => ({...base, zIndex: 9999})}} required />
+            <Select className='my-4' value={workshop.topic.value} onChange={selectedOption => handleOnChangeSelectTopic(selectedOption)} options={topicsOptions} placeholder='Tema radionice' menuPortalTarget={document.body} styles={{menuPortal: base => ({...base, zIndex: 9999})}} required />
+            <Select className='my-4' value={workshop.lecturers.name} onChange={selectedOptions => handleOnChangeSelectLecturers(selectedOptions)} isMulti options={lecturerOptions} placeholder='Predavači radionice' menuPortalTarget={document.body} styles={{menuPortal: base => ({...base, zIndex: 9999})}} required />
             <Input type='textarea' name='description' value={workshop.description} handleOnChange={handleOnChange} placeholder='Opis radionice' />
             <Button>Dodaj</Button>
         </form>
