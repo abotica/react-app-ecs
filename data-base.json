@@ -116,21 +116,18 @@
   ],
   "predavaci": [
     {
-      "id": "predavac_1",
-      "name": "Predavac 1",
-      "bio": "Biografija predavaca 1",
-      "organization": "organizacija_1",
+      "id": "dbd89c58-105d-4b5f-b293-2fbef96e051d",
+      "name": "Andrija Botica",
+      "bio": "",
+      "organization": {
+        "id": "6fe80659-d7a1-4970-aa91-62825380579c",
+        "name": "Pevex"
+      },
       "topics": [
-        "React"
-      ]
-    },
-    {
-      "id": "predavac_2",
-      "name": "Predavac 2",
-      "bio": "Biografija predavaca 2",
-      "organization": "organizacija_2",
-      "topics": [
-        "React"
+        {
+          "id": "express",
+          "name": "Express"
+        }
       ]
     }
   ],
