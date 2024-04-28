@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import AdminContext from '../contexts/AdminContext'
 
@@ -8,6 +9,9 @@ import ToggleButton from './ui/ToggleButton'
 
 function Navbar() {
     const {isAdmin} = useContext(AdminContext)
+    const location = useLocation()
+    console.log(location)
+
 
     return (
         <nav className='bg-navbar-black sticky h-16 flex justify-between items-center'>
@@ -20,16 +24,16 @@ function Navbar() {
 
             <div className='flex justify-end items-center'>
                 <ul className='flex items-center text-white'>
-                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                    <li className={`${location.pathname === "/" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]`}>
                         <Link to={"/"}>Naslovnica</Link>
                     </li>
-                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                    <li className={`${location.pathname === "/workshops" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]`}>
                         <Link to={"/workshops"}>Radionice</Link>
                     </li>
-                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                    <li className={`${location.pathname === "/lecturers" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s`}>
                         <Link to={"/lecturers"}>Predavači</Link>
                     </li>
-                    <li className="mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]">
+                    <li className={`${location.pathname === "/administration" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]`}>
                         {isAdmin && <Link to={"/administration"}>Administracija</Link>}
                     </li>
                 </ul>

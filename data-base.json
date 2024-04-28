@@ -26,25 +26,96 @@
       "enrolled": 3
     },
     {
-      "id": "611b8b5a-9ca4-438f-89a2-1a1a7601101d",
+      "id": "aa301998-4391-4b07-9501-5e6b83652f09",
+      "name": "PHP",
+      "date": "2024-05-11",
+      "lecturers": [
+        {
+          "id": "predavac_1",
+          "name": "Predavac 1"
+        },
+        {
+          "id": "predavac_2",
+          "name": "Predavac 2"
+        }
+      ],
+      "description": "PHP je uzas",
+      "topic": {
+        "id": "php",
+        "name": "PHP"
+      },
+      "difficulty": {
+        "id": "mid",
+        "name": "Mid"
+      },
+      "enrolled": 1
+    },
+    {
+      "id": "11f2d640-8f38-48f2-9e5f-b1c0ed6350f8",
       "name": "Wordpress",
-      "date": "2024-04-29",
+      "date": "2024-04-30",
+      "lecturers": [
+        {
+          "id": "predavac_1",
+          "name": "Predavac 1"
+        },
+        {
+          "id": "predavac_2",
+          "name": "Predavac 2"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor metus dignissim nunc maximus, non vestibulum diam pharetra. Donec at urna lectus. Vestibulum pulvinar rutrum tempor. Curabitur ac dui quis ipsum dignissim feugiat. Aliquam aliquam l.",
+      "topic": {
+        "id": "wordpress",
+        "name": "Wordpress"
+      },
+      "difficulty": {
+        "id": "mid",
+        "name": "Mid"
+      },
+      "enrolled": 0
+    },
+    {
+      "id": "387583e8-da02-42f9-80de-af4d040c213f",
+      "name": "Express",
+      "date": "2024-04-30",
       "lecturers": [
         {
           "id": "predavac_2",
           "name": "Predavac 2"
         }
       ],
-      "description": "Wordpress je zakon aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor metus dignissim nunc maximus, non vestibulum diam pharetra. Donec at urna lectus. Vestibulum pulvinar rutrum tempor. Curabitur ac dui quis ipsum dignissim feugiat. Aliquam aliquam le",
       "topic": {
-        "id": "wordpress",
-        "name": "Wordpress"
+        "id": "express",
+        "name": "Express"
       },
       "difficulty": {
         "id": "senior",
         "name": "Senior"
       },
-      "enrolled": 2
+      "enrolled": 0
+    },
+    {
+      "id": "bc4d6abb-0a8d-4ed9-9f8d-9e576e6d8524",
+      "name": "Wordpress",
+      "date": "2024-04-30",
+      "lecturers": [
+        {
+          "id": "predavac_2",
+          "name": "Predavac 2"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor metus dignissim nunc maximus, non vestibulum diam pharetra. Donec at urna lectus. Vestibulum pulvinar rutrum tempor. Curabitur ac dui quis ipsum dignissim feugiat. Aliquam aliquam le",
+      "topic": {
+        "id": "wordpress",
+        "name": "Wordpress"
+      },
+      "difficulty": {
+        "id": "mid",
+        "name": "Mid"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [

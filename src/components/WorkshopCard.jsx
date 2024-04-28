@@ -29,11 +29,11 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId }) {
     }
 
     return (
-        <div className='w-5/12 h-5/12 flex flex-col rounded-xl bg-white shadow-md p-6'>
+        <div  className='w-5/12 h-5/12 flex flex-col rounded-xl bg-white shadow-md p-6 my-2'>
             <div className='h-fit flex flex-col items-center'>
                 <p className='font-semibold text-3xl'>{workshop.topic.name}</p>
                 <p className='font-semibold italic my-2'>OPIS</p>
-                <p className='font-thin'>{workshop.description}</p>
+                <div className='font-thin text-balance w-10/12 h-fit text-center'>{workshop.description}</div>
                 <p className='font-semibold italic my-2'>TEŽINA</p>
                 <p className='font-thin'>{workshop.difficulty.name}</p>
                 <p className='font-semibold italic my-2'>DATUM ODRŽAVANJA</p>
