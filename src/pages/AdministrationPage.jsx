@@ -10,12 +10,12 @@ import AdministrationLayout from '../layout/AdministrationLayout'
 
 function AdministrationPage() {
     const { isAdmin } = useContext(AdminContext)
-    const [editLecturersData, setEditLecturersData] = useState(false)
+    const [editData, setEditData] = useState(false)
     
 
     return isAdmin ? (
         <MainLayout>
-                <CommonStatesContext.Provider value={{editLecturersData: editLecturersData, setEditLecturersData: setEditLecturersData}}>
+                <CommonStatesContext.Provider value={{editData: editData, setEditData: setEditData}}>
                     <AdministrationLayout>
                         <Outlet />
                     </AdministrationLayout>

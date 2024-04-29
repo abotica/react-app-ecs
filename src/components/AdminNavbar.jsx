@@ -12,7 +12,7 @@ import CommonStatesContext from '../contexts/CommonStatesContext'
 function AdminNavbar() {
 const location = useLocation()
 const {showWorkshopsModal, setShowWorkshopsModal, showOrganizationsModal, setShowOrganizationsModal, showLecturersModal, setShowLecturersModal} = useContext(ModalsContext)
-const {setEditLecturersData} = useContext(CommonStatesContext)
+const {setEditData} = useContext(CommonStatesContext)
 
 function handleOnClick(){
     switch(location.pathname){
@@ -43,7 +43,7 @@ function handleOnClick(){
                 </li>
             </ul>
         </div>
-        <Button onClick={() => {setEditLecturersData(false) ; handleOnClick()}}><FontAwesomeIcon icon={faPlus} />Dodaj</Button>
+        <Button onClick={() => {setEditData(false) ; handleOnClick()}}><FontAwesomeIcon icon={faPlus} />Dodaj</Button>
     </nav>
   )
 }

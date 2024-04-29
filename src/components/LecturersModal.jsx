@@ -15,7 +15,7 @@ import LecturersModalForm from './LecturersModalForm'
 function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }) {
 
     const { lecturersURL, organizationsURL } = useContext(UrlContext)
-    const {editLecturersData, setEditLecturersData} = useContext(CommonStatesContext)
+    const {editData, setEditData} = useContext(CommonStatesContext)
 
     const [isLoading, setIsLoading] = useState(true)
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -75,7 +75,7 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }
 
     return (
         <ModalLayout handleCloseModal={handleCloseModal}>
-            {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <LecturersModalForm isLoading={isLoading} organizations={organizations} lecturer={lecturer} setLecturer={setLecturer} setIsSubmitting={setIsSubmitting} handlePost={handlePost} editDataId={editDataId} editLecturersData={editLecturersData} setEditLecturersData={setEditLecturersData} handlePut={handlePut}/>}
+            {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <LecturersModalForm isLoading={isLoading} organizations={organizations} lecturer={lecturer} setLecturer={setLecturer} setIsSubmitting={setIsSubmitting} handlePost={handlePost} editDataId={editDataId} editData={editData} setEditData={setEditData} handlePut={handlePut}/>}
         </ModalLayout>
     )
 }

@@ -6,14 +6,14 @@ import Button from './ui/Button'
 
 function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, setdeleteData, setShowLecturersModal}) {
   
-  const {setEditLecturersData} = useContext(CommonStatesContext)
+  const {setEditData} = useContext(CommonStatesContext)
 
   return (
     <tr className='border-b-2'>
       {showDataProperties.map(property => <td key={property} className='px-1 border-collapse'>{rowData[property]}</td>)}
       <td>
         <div className='flex justify-center'>
-          <Button onClick={() => {setEditLecturersData(true); setdeleteData(
+          <Button onClick={() => {setEditData(true); setdeleteData(
             {
               id: rowData.id,
               name: rowData.name
