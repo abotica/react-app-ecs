@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import useCreateOptions from '../hooks/useCreateOptions';
 
 import Select from 'react-select';
@@ -7,7 +7,15 @@ import LoadingSpinner from './ui/LoadingSpinner';
 import Input from './ui/Input';
 import Button from './ui/Button';
 
-function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, setIsSubmitting, handlePost }) {
+import { v4 as uuidv4 } from 'uuid';
+
+import axios from 'axios';
+
+import UrlContext from '../contexts/UrlContext';
+
+function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, setIsSubmitting, handlePost}) {
+
+    const {lecturersURL} = useContext(UrlContext)
 
     const organizationsOptions = useCreateOptions(organizations)
     const topicsOptions = [
@@ -16,6 +24,7 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
         { value: "php", label: "PHP" },
         { value: "wordpress", label: "Wordpress" },
     ]
+    
 
     function handleOnChange(e) {
         setLecturer({

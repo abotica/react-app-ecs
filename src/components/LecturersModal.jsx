@@ -11,7 +11,7 @@ import ModalLayout from '../layout/ModalLayout'
 import ModalAffirmationScreen from './ModalAffirmationScreen'
 import LecturersModalForm from './LecturersModalForm'
 
-function LecturersModal({ setShowLecturersModal, handleDataRefresh }) {
+function LecturersModal({ setShowLecturersModal, handleDataRefresh, editLecturersData, setEditLecturersData, editDataId }) {
 
     const { lecturersURL, organizationsURL } = useContext(UrlContext)
 
@@ -44,6 +44,17 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh }) {
             .catch(error => {
                 console.error(error)
             })
+    }, [])
+
+    useEffect(() => {
+        if(editLecturersData) {
+            axios.get(lecturersURL + `/${editDataId}`)
+                .then(response => {
+                    setLecturer(response.data)
+                    console.log(response.data, "ušlo je u edit")
+                    setEditLecturersData(false)
+                })
+        }
     }, [])
 
     function handlePost() {
