@@ -1,16 +1,16 @@
 {
   "radionice": [
     {
-      "id": "202c084d-da77-49a6-b6aa-e197faeffc41",
+      "id": "6ddd4865-7676-43fd-b677-e9cd77e99811",
       "name": "React JuniorDev",
-      "date": "2024-05-22",
+      "date": "2024-05-01",
       "lecturers": [
         {
-          "id": "6de2e99b-5d1a-4374-88d1-7fad4fe4d1ae",
+          "id": "40f80730-30e1-41c9-856b-93946e9bfcd5",
           "name": "Andrija Botica"
         }
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut diam ante. Cras viverra semper nulla ut vestibulum. Fusce egestas eros in massa lobortis, nec semper ligula condimentum. Orci varius natoque penatibus et magnis dis parturient montes",
+      "description": "Opis",
       "topic": {
         "id": "react",
         "name": "React"
@@ -24,27 +24,12 @@
   ],
   "predavaci": [
     {
-      "id": "745ef88a-81cc-42a3-b87d-81343f0a53d8",
-      "name": "Ivan Baricevic",
-      "bio": "",
-      "organization": {
-        "id": "6fe80659-d7a1-4970-aa91-62825380579c",
-        "name": "Pevex"
-      },
-      "topics": [
-        {
-          "id": "react",
-          "name": "React"
-        }
-      ]
-    },
-    {
-      "id": "6de2e99b-5d1a-4374-88d1-7fad4fe4d1ae",
+      "id": "1f138ec8-5d9c-41a8-91d3-47bcd3c7fb5a",
       "name": "Andrija Botica",
       "bio": "",
       "organization": {
-        "id": "095430d6-2a99-471b-9990-39be95f76e12",
-        "name": "Lorem Ipsum"
+        "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
+        "name": "Ericsson Nikola Tesla"
       },
       "topics": [
         {
@@ -56,58 +41,15 @@
   ],
   "organizacije": [
     {
-      "id": "095430d6-2a99-471b-9990-39be95f76e12",
-      "name": "Lorem Ipsum",
+      "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
+      "name": "Ericsson Nikola Tesla",
       "workshops": [
         {
-          "id": "f661c881-ae78-40ea-9f84-679dca307b74",
+          "id": "6ddd4865-7676-43fd-b677-e9cd77e99811",
           "name": "React JuniorDev"
-        },
-        {
-          "id": "ed3acbcb-0c81-4c35-86de-0aae87ea3184",
-          "name": "HHH"
         }
       ],
       "description": ""
-    },
-    {
-      "id": "6fe80659-d7a1-4970-aa91-62825380579c",
-      "name": "Pevex",
-      "workshops": [
-        {
-          "id": "bc4d6abb-0a8d-4ed9-9f8d-9e576e6d8524",
-          "name": "Wordpress"
-        }
-      ],
-      "description": ""
-    }
-  ],
-  "tezine": [
-    {
-      "id": "junior",
-      "ime": "Junior"
-    },
-    {
-      "id": "mid",
-      "ime": "Mid"
-    },
-    {
-      "id": "senior",
-      "ime": "Senior"
-    }
-  ],
-  "teme": [
-    {
-      "id": "react",
-      "ime": "React"
-    },
-    {
-      "id": "express",
-      "ime": "Express"
-    },
-    {
-      "id": "next_js",
-      "ime": "Next.js"
     }
   ]
 }

@@ -52,9 +52,9 @@ function OrganizationsAdminPage() {
 
   return (
     <div className='h-fit'>
-    {showOrganizationsModal && <OrganizationsModal setShowOrganizationsModal={setShowOrganizationsModal} handleDataRefresh={handleDataRefresh}/> }
+    {showOrganizationsModal && <OrganizationsModal setShowOrganizationsModal={setShowOrganizationsModal} handleDataRefresh={handleDataRefresh} editDataId={deleteData.id}/> }
     {showDeleteAffirmationModal && <DeleteAffirmationModal setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} handleDelete={handleDelete} dataName={deleteData.name}/>}
-      <Table dataArray={organizations} showDataProperties={organizationsShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setDeleteData={setDeleteData} />
+      <Table dataArray={organizations} showDataProperties={organizationsShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setDeleteData={setDeleteData} setShowModal={setShowOrganizationsModal} />
     </div>
   )
 }

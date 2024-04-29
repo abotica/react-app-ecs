@@ -15,7 +15,7 @@ import LecturersModalForm from './LecturersModalForm'
 function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }) {
 
     const { lecturersURL, organizationsURL } = useContext(UrlContext)
-    const {editData, setEditData} = useContext(CommonStatesContext)
+    const {editData} = useContext(CommonStatesContext)
 
     const [isLoading, setIsLoading] = useState(true)
     const [isSubmitting, setIsSubmitting] = useState(false)
