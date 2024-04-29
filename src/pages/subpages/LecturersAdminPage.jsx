@@ -17,7 +17,7 @@ function LecturersAdminPage() {
 
   const [lecturers, setLecturers] = useState([])
   const [showDeleteAffirmationModal, setShowDeleteAffirmationModal] = useState(false)
-  const [deleteData, setdeleteData] = useState({
+  const [deleteData, setDeleteData] = useState({
     id: '',
     name: ''
   })
@@ -56,7 +56,7 @@ function LecturersAdminPage() {
     <div className='h-fit'>
     {showLecturersModal && <LecturersModal setShowLecturersModal={setShowLecturersModal} handleDataRefresh={handleDataRefresh} editDataId={deleteData.id}/>}
     {showDeleteAffirmationModal && <DeleteAffirmationModal setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} handleDelete={handleDelete} dataName={deleteData.name}/>}
-    <Table dataArray={lecturers} showDataProperties={lecturersShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setdeleteData={setdeleteData} setShowLecturersModal={setShowLecturersModal}/>
+    <Table dataArray={lecturers} showDataProperties={lecturersShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setDeleteData={setDeleteData} setShowModal={setShowLecturersModal}/>
     </div>
   )
 }

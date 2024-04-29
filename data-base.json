@@ -1,135 +1,28 @@
 {
   "radionice": [
     {
-      "id": "f661c881-ae78-40ea-9f84-679dca307b74",
+      "id": "202c084d-da77-49a6-b6aa-e197faeffc41",
       "name": "React JuniorDev",
-      "date": "2024-04-30",
+      "date": "2024-05-22",
       "lecturers": [
         {
-          "id": "predavac_2",
-          "name": "Predavac 2"
-        },
-        {
-          "id": "predavac_1",
-          "name": "Predavac 1"
+          "id": "6de2e99b-5d1a-4374-88d1-7fad4fe4d1ae",
+          "name": "Andrija Botica"
         }
       ],
-      "description": "adASWDSDAS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut diam ante. Cras viverra semper nulla ut vestibulum. Fusce egestas eros in massa lobortis, nec semper ligula condimentum. Orci varius natoque penatibus et magnis dis parturient montes",
       "topic": {
-        "id": "express",
-        "name": "Express"
+        "id": "react",
+        "name": "React"
       },
       "difficulty": {
-        "id": "mid",
-        "name": "Mid"
-      },
-      "enrolled": 3
-    },
-    {
-      "id": "11f2d640-8f38-48f2-9e5f-b1c0ed6350f8",
-      "name": "Wordpress",
-      "date": "2024-04-30",
-      "lecturers": [
-        {
-          "id": "predavac_1",
-          "name": "Predavac 1"
-        },
-        {
-          "id": "predavac_2",
-          "name": "Predavac 2"
-        }
-      ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor metus dignissim nunc maximus, non vestibulum diam pharetra. Donec at urna lectus. Vestibulum pulvinar rutrum tempor. Curabitur ac dui quis ipsum dignissim feugiat. Aliquam aliquam l.",
-      "topic": {
-        "id": "wordpress",
-        "name": "Wordpress"
-      },
-      "difficulty": {
-        "id": "mid",
-        "name": "Mid"
+        "id": "junior",
+        "name": "Junior"
       },
       "enrolled": 0
-    },
-    {
-      "id": "387583e8-da02-42f9-80de-af4d040c213f",
-      "name": "Express",
-      "date": "2024-04-30",
-      "lecturers": [
-        {
-          "id": "predavac_2",
-          "name": "Predavac 2"
-        }
-      ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor metus dignissim nunc maximus, non vestibulum diam pharetra. Donec at urna lectus. Vestibulum pulvinar rutrum tempor. Curabitur ac dui quis ipsum dignissim feugiat. Aliquam aliquam le",
-      "topic": {
-        "id": "express",
-        "name": "Express"
-      },
-      "difficulty": {
-        "id": "senior",
-        "name": "Senior"
-      },
-      "enrolled": 0
-    },
-    {
-      "id": "bc4d6abb-0a8d-4ed9-9f8d-9e576e6d8524",
-      "name": "Wordpress",
-      "date": "2024-04-30",
-      "lecturers": [
-        {
-          "id": "predavac_2",
-          "name": "Predavac 2"
-        }
-      ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor metus dignissim nunc maximus, non vestibulum diam pharetra. Donec at urna lectus. Vestibulum pulvinar rutrum tempor. Curabitur ac dui quis ipsum dignissim feugiat. Aliquam aliquam le",
-      "topic": {
-        "id": "wordpress",
-        "name": "Wordpress"
-      },
-      "difficulty": {
-        "id": "mid",
-        "name": "Mid"
-      },
-      "enrolled": 0
-    },
-    {
-      "id": "ed3acbcb-0c81-4c35-86de-0aae87ea3184",
-      "name": "HHH",
-      "date": "2024-05-11",
-      "lecturers": [
-        {
-          "id": "predavac_2",
-          "name": "Predavac 2"
-        }
-      ],
-      "description": "neyyyy",
-      "topic": {
-        "id": "php",
-        "name": "PHP"
-      },
-      "difficulty": {
-        "id": "senior",
-        "name": "Senior"
-      },
-      "enrolled": 1
     }
   ],
   "predavaci": [
-    {
-      "id": "dbd89c58-105d-4b5f-b293-2fbef96e051d",
-      "name": "Ivo Ivic",
-      "bio": "",
-      "organization": {
-        "id": "095430d6-2a99-471b-9990-39be95f76e12",
-        "name": "Lorem Ipsum"
-      },
-      "topics": [
-        {
-          "id": "express",
-          "name": "Express"
-        }
-      ]
-    },
     {
       "id": "745ef88a-81cc-42a3-b87d-81343f0a53d8",
       "name": "Ivan Baricevic",

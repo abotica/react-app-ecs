@@ -4,7 +4,7 @@ import CommonStatesContext from '../contexts/CommonStatesContext'
 
 import Button from './ui/Button'
 
-function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, setdeleteData, setShowLecturersModal}) {
+function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, setDeleteData, setShowModal}) {
   
   const {setEditData} = useContext(CommonStatesContext)
 
@@ -13,13 +13,13 @@ function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, 
       {showDataProperties.map(property => <td key={property} className='px-1 border-collapse'>{rowData[property]}</td>)}
       <td>
         <div className='flex justify-center'>
-          <Button onClick={() => {setEditData(true); setdeleteData(
+          <Button onClick={() => {setEditData(true); setDeleteData(
             {
               id: rowData.id,
               name: rowData.name
             }
-          ); setShowLecturersModal(true)}}>Uredi</Button>
-          <Button onClick={() => {setShowDeleteAffirmationModal(true); setdeleteData({
+          ); setShowModal(true)}}>Uredi</Button>
+          <Button onClick={() => {setShowDeleteAffirmationModal(true); setDeleteData({
             id: rowData.id,
             name: rowData.name
           })}}>Izbriši</Button>

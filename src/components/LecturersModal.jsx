@@ -43,6 +43,9 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }
                 setOrganizations(response.data)
                 setIsLoading(false)
             })
+            .catch(error => {
+                console.error(error)
+            })
     }, [])
 
 
@@ -54,6 +57,7 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }
                 handleDataRefresh()
             })
             .catch(error => {
+                setIsLoading(false)
                 setError('Nešto je pošlo po krivu')
                 console.error(error)
             })
@@ -75,7 +79,7 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }
 
     return (
         <ModalLayout handleCloseModal={handleCloseModal}>
-            {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <LecturersModalForm isLoading={isLoading} organizations={organizations} lecturer={lecturer} setLecturer={setLecturer} setIsSubmitting={setIsSubmitting} handlePost={handlePost} editDataId={editDataId} editData={editData} setEditData={setEditData} handlePut={handlePut}/>}
+            {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <LecturersModalForm isLoading={isLoading} organizations={organizations} lecturer={lecturer} setLecturer={setLecturer} setIsSubmitting={setIsSubmitting} handlePost={handlePost} editDataId={editDataId} editData={editData} handlePut={handlePut}/>}
         </ModalLayout>
     )
 }

@@ -15,7 +15,7 @@ function OrganizationsAdminPage() {
 
   const [organizations, setOrganizations] = useState([])
   const [showDeleteAffirmationModal, setShowDeleteAffirmationModal] = useState(false)
-  const [deleteData, setdeleteData] = useState({
+  const [deleteData, setDeleteData] = useState({
     id: '',
     name: ''
   })
@@ -54,7 +54,7 @@ function OrganizationsAdminPage() {
     <div className='h-fit'>
     {showOrganizationsModal && <OrganizationsModal setShowOrganizationsModal={setShowOrganizationsModal} handleDataRefresh={handleDataRefresh}/> }
     {showDeleteAffirmationModal && <DeleteAffirmationModal setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} handleDelete={handleDelete} dataName={deleteData.name}/>}
-      <Table dataArray={organizations} showDataProperties={organizationsShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setdeleteData={setdeleteData} />
+      <Table dataArray={organizations} showDataProperties={organizationsShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setDeleteData={setDeleteData} />
     </div>
   )
 }

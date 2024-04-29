@@ -1,21 +1,24 @@
-import React, { useEffect } from 'react'
-import { useContext, useState } from 'react'
+import React from 'react'
+import { useContext, useState, useEffect } from 'react'
 
 import axios from 'axios'
 
 import UrlContext from '../contexts/UrlContext'
+import CommonStatesContext from '../contexts/CommonStatesContext'
 
 import { v4 as uuidv4 } from 'uuid'
 
-import ModalAffirmationScreen from './ModalAffirmationScreen'
-import WorkshopsModalForm from './WorkshopsModalForm'
 import ModalLayout from '../layout/ModalLayout'
 
+import ModalAffirmationScreen from './ModalAffirmationScreen'
+import WorkshopsModalForm from './WorkshopsModalForm'
 
-function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
+
+function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh, editDataId }) {
 
   // getting the URL for fetching lecturers from the API
   const { lecturersURL, workshopsURL } = useContext(UrlContext)
+  const {editData, setEditData} = useContext(CommonStatesContext)
 
   const [isLoading, setIsLoading] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -49,7 +52,7 @@ function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
         setIsLoading(false)
       })
       .catch(error => {
-        console.log(error)
+        console.error(error)
       })
   }, [])
 
@@ -61,16 +64,30 @@ function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh }) {
         setSuccess('Radionica je uspješno dodana!')
         handleDataRefresh()
       })
-      .catch(() => {
+      .catch(error => {
         setIsLoading(false)
         setError('Nešto je pošlo po krivu')
+        console.error(error)
+      })
+  }
+
+  function handlePut(){
+    axios.put(workshopsURL + `/${editDataId}`, workshop)
+      .then(() => {
+        setIsLoading(false)
+        setSuccess('Radionica uspješno izmijenjena!')
+        handleDataRefresh()
+      })
+      .catch(error => {
+        setError('Nešto je pošlo po krivu')
+        console.error(error)
       })
   }
 
 
   return (
     <ModalLayout handleCloseModal={handleCloseModal}>
-      {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading} /> : <WorkshopsModalForm isLoading={isLoading} lecturers={lecturers} workshop={workshop} setWorkshop={setWorkshop} setIsSubmitting={setIsSubmitting} handlePost={handlePost} />}
+      {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading} /> : <WorkshopsModalForm isLoading={isLoading} lecturers={lecturers} workshop={workshop} setWorkshop={setWorkshop} setIsSubmitting={setIsSubmitting} handlePost={handlePost} editDataId={editDataId} editData={editData} handlePut={handlePut}/>}
     </ModalLayout>
   )
 }
