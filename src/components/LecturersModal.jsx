@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 import UrlContext from '../contexts/UrlContext'
+import CommonStatesContext from '../contexts/CommonStatesContext'
 
 import axios from 'axios'
 
@@ -11,9 +12,10 @@ import ModalLayout from '../layout/ModalLayout'
 import ModalAffirmationScreen from './ModalAffirmationScreen'
 import LecturersModalForm from './LecturersModalForm'
 
-function LecturersModal({ setShowLecturersModal, handleDataRefresh, editLecturersData, setEditLecturersData, editDataId }) {
+function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }) {
 
     const { lecturersURL, organizationsURL } = useContext(UrlContext)
+    const {editLecturersData, setEditLecturersData} = useContext(CommonStatesContext)
 
     const [isLoading, setIsLoading] = useState(true)
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -41,21 +43,8 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh, editLecturer
                 setOrganizations(response.data)
                 setIsLoading(false)
             })
-            .catch(error => {
-                console.error(error)
-            })
     }, [])
 
-    useEffect(() => {
-        if(editLecturersData) {
-            axios.get(lecturersURL + `/${editDataId}`)
-                .then(response => {
-                    setLecturer(response.data)
-                    console.log(response.data, "ušlo je u edit")
-                    setEditLecturersData(false)
-                })
-        }
-    }, [])
 
     function handlePost() {
         axios.post(lecturersURL, lecturer)
@@ -66,12 +55,27 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh, editLecturer
             })
             .catch(error => {
                 setError('Nešto je pošlo po krivu')
+                console.error(error)
             })
     }
 
+    function handlePut() {
+        axios.put(lecturersURL + `/${editDataId}`, lecturer)
+            .then(() => {
+                setIsLoading(false)
+                setSuccess('Predavač uspješno izmijenjen!')
+                handleDataRefresh()
+            })
+            .catch(error => {
+                setError('Nešto je pošlo po krivu')
+                console.error(error)
+            })
+    }
+
+
     return (
         <ModalLayout handleCloseModal={handleCloseModal}>
-            {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <LecturersModalForm isLoading={isLoading} organizations={organizations} lecturer={lecturer} setLecturer={setLecturer} setIsSubmitting={setIsSubmitting} handlePost={handlePost}/>}
+            {isSubmitting ? <ModalAffirmationScreen error={error} success={success} isLoading={isLoading}/> : <LecturersModalForm isLoading={isLoading} organizations={organizations} lecturer={lecturer} setLecturer={setLecturer} setIsSubmitting={setIsSubmitting} handlePost={handlePost} editDataId={editDataId} editLecturersData={editLecturersData} setEditLecturersData={setEditLecturersData} handlePut={handlePut}/>}
         </ModalLayout>
     )
 }

@@ -5,11 +5,14 @@ import Button from './ui/Button'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 import ModalsContext from '../contexts/ModalsContext'
+import CommonStatesContext from '../contexts/CommonStatesContext'
 
 function AdminNavbar() {
 const location = useLocation()
 const {showWorkshopsModal, setShowWorkshopsModal, showOrganizationsModal, setShowOrganizationsModal, showLecturersModal, setShowLecturersModal} = useContext(ModalsContext)
+const {setEditLecturersData} = useContext(CommonStatesContext)
 
 function handleOnClick(){
     switch(location.pathname){
@@ -40,7 +43,7 @@ function handleOnClick(){
                 </li>
             </ul>
         </div>
-        <Button onClick={handleOnClick}><FontAwesomeIcon icon={faPlus} />Dodaj</Button>
+        <Button onClick={() => {setEditLecturersData(false) ; handleOnClick()}}><FontAwesomeIcon icon={faPlus} />Dodaj</Button>
     </nav>
   )
 }

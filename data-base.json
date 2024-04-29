@@ -117,7 +117,22 @@
   "predavaci": [
     {
       "id": "dbd89c58-105d-4b5f-b293-2fbef96e051d",
-      "name": "Andrija Botica",
+      "name": "Ivo Ivic",
+      "bio": "",
+      "organization": {
+        "id": "095430d6-2a99-471b-9990-39be95f76e12",
+        "name": "Lorem Ipsum"
+      },
+      "topics": [
+        {
+          "id": "express",
+          "name": "Express"
+        }
+      ]
+    },
+    {
+      "id": "745ef88a-81cc-42a3-b87d-81343f0a53d8",
+      "name": "Ivan Baricevic",
       "bio": "",
       "organization": {
         "id": "6fe80659-d7a1-4970-aa91-62825380579c",
@@ -125,8 +140,23 @@
       },
       "topics": [
         {
-          "id": "express",
-          "name": "Express"
+          "id": "react",
+          "name": "React"
+        }
+      ]
+    },
+    {
+      "id": "6de2e99b-5d1a-4374-88d1-7fad4fe4d1ae",
+      "name": "Andrija Botica",
+      "bio": "",
+      "organization": {
+        "id": "095430d6-2a99-471b-9990-39be95f76e12",
+        "name": "Lorem Ipsum"
+      },
+      "topics": [
+        {
+          "id": "react",
+          "name": "React"
         }
       ]
     }

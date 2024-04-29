@@ -9,13 +9,14 @@ import DeleteAffirmationModal from '../../components/DeleteAffirmationModal'
 import Table from '../../components/Table'
 import LecturersModal from '../../components/LecturersModal'
 
+
 function LecturersAdminPage() {
   const {lecturersURL} = useContext(UrlContext)
   const {showLecturersModal, setShowLecturersModal} = useContext(ModalsContext)
+  
 
   const [lecturers, setLecturers] = useState([])
   const [showDeleteAffirmationModal, setShowDeleteAffirmationModal] = useState(false)
-  const [editLecturersData, setEditLecturersData] = useState(false)
   const [deleteData, setdeleteData] = useState({
     id: '',
     name: ''
@@ -53,9 +54,9 @@ function LecturersAdminPage() {
   
   return (
     <div className='h-fit'>
-    {showLecturersModal && <LecturersModal setShowLecturersModal={setShowLecturersModal} handleDataRefresh={handleDataRefresh} editLecturersData={editLecturersData} setEditLecturersData={setEditLecturersData} editDataId={deleteData.id}/>}
+    {showLecturersModal && <LecturersModal setShowLecturersModal={setShowLecturersModal} handleDataRefresh={handleDataRefresh} editDataId={deleteData.id}/>}
     {showDeleteAffirmationModal && <DeleteAffirmationModal setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} handleDelete={handleDelete} dataName={deleteData.name}/>}
-    <Table dataArray={lecturers} showDataProperties={lecturersShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setdeleteData={setdeleteData} setEditLecturersData={setEditLecturersData} setShowLecturersModal={setShowLecturersModal}/>
+    <Table dataArray={lecturers} showDataProperties={lecturersShowDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setdeleteData={setdeleteData} setShowLecturersModal={setShowLecturersModal}/>
     </div>
   )
 }

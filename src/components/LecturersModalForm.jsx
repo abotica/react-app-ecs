@@ -13,9 +13,9 @@ import axios from 'axios';
 
 import UrlContext from '../contexts/UrlContext';
 
-function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, setIsSubmitting, handlePost}) {
+function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, setIsSubmitting, handlePost, editLecturersData, setEditLecturersData, editDataId, handlePut }) {
 
-    const {lecturersURL} = useContext(UrlContext)
+    const { lecturersURL } = useContext(UrlContext)
 
     const organizationsOptions = useCreateOptions(organizations)
     const topicsOptions = [
@@ -24,7 +24,7 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
         { value: "php", label: "PHP" },
         { value: "wordpress", label: "Wordpress" },
     ]
-    
+
 
     function handleOnChange(e) {
         setLecturer({
@@ -53,15 +53,28 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
         })
     }
 
+    useEffect(() => {
+        if (editLecturersData) {
+            axios.get(lecturersURL + `/${editDataId}`)
+                .then(response => {
+                    setLecturer(response.data)
+                    console.log(response.data, "ušlo je u edit")
+                })
+        }
+    }, [])
 
-
+    console.log(organizationsOptions, "org options")
     return isLoading ? <LoadingSpinner spin={true} /> :
-        <form className='flex flex-col h-max w-full' onSubmit={e => { e.preventDefault(); setIsSubmitting(true); handlePost() }}>
+        <form className='flex flex-col h-max w-full' onSubmit={e => {
+            e.preventDefault(); setIsSubmitting(true)
+            if (editLecturersData) handlePut()
+            else handlePost()
+        }}>
             <h2>Dodaj predavača</h2>
             <Input type='text' name='name' value={lecturer.name} handleOnChange={handleOnChange} placeholder='Ime i prezime predavača' />
-            <Select className='my-4' value={lecturer.organization.value} onChange={selectedOption => handleOnChangeSelectOrganization(selectedOption)} options={organizationsOptions} placeholder='Odaberite organizaciju predavača' menuPortalTarget={document.body} styles={{menuPortal: base => ({...base, zIndex: 9999})}} required />
-            <Select className='my-4' isMulti value={lecturer.topics.name} onChange={selectedOptions => handleOnChangeSelectTopics(selectedOptions)} options={topicsOptions} placeholder='Odaberite teme koje predavač predaje' menuPortalTarget={document.body} styles={{menuPortal: base => ({...base, zIndex: 9999})}} required />
-            <Button>Dodaj</Button>
+            <Select className='my-4' defaultValue={organizationsOptions.filter(org => org.value === lecturer.organization.id)} value={lecturer.organization.value} onChange={selectedOption => handleOnChangeSelectOrganization(selectedOption)} options={organizationsOptions} placeholder='Odaberite organizaciju predavača' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
+            <Select className='my-4' isMulti defaultValue={topicsOptions.filter(topic => lecturer.topics.find(obj => obj.id === topic.value))} value={lecturer.topics.name} onChange={selectedOptions => handleOnChangeSelectTopics(selectedOptions)} options={topicsOptions} placeholder='Odaberite teme koje predavač predaje' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
+            {editLecturersData ? <Button>Izmijeni podatke</Button> : <Button>Dodaj</Button>}
         </form>
 
 }

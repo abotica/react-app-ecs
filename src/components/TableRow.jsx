@@ -1,8 +1,12 @@
 import React, { useContext } from 'react'
 
+import CommonStatesContext from '../contexts/CommonStatesContext'
+
 import Button from './ui/Button'
 
-function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, setdeleteData, setEditLecturersData, setShowLecturersModal}) {
+function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, setdeleteData, setShowLecturersModal}) {
+  
+  const {setEditLecturersData} = useContext(CommonStatesContext)
 
   return (
     <tr className='border-b-2'>
