@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 
 import AdminContext from '../contexts/AdminContext'
 
-import logo from '../assets/DDalm-Logo-AB.svg'
+import logo from '../assets/logos/DDalm-Logo-AB.svg'
 import ToggleButton from './ui/ToggleButton'
 
 function Navbar() {

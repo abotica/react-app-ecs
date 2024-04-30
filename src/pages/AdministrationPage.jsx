@@ -11,7 +11,6 @@ import AdministrationLayout from '../layout/AdministrationLayout'
 function AdministrationPage() {
     const { isAdmin } = useContext(AdminContext)
     const [editData, setEditData] = useState(false)
-    
 
     return isAdmin ? (
         <MainLayout>

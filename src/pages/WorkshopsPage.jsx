@@ -18,10 +18,11 @@ function WorkshopsPage() {
   const [clickedWorkshopId, setClickedWorkshopId] = useState('')
   const [filterValues, setFilterValues] = useState({});
 
-  const filters = [{id: 'topics', name: 'Teme', options: ['React', 'PHP', 'Express', 'Wordpress']}, {id: 'difficulty', name: 'Težina', options: ['Junior', 'Mid', 'Senior']}]
+  const filters = [{ id: 'topics', name: 'Teme', options: ['React', 'PHP', 'Express', 'Wordpress'] }, { id: 'difficulty', name: 'Težina', options: ['Junior', 'Mid', 'Senior'] }]
 
   const { workshopsURL } = useContext(UrlContext)
 
+  // fetch workshops on page load
   useEffect(() => {
     axios.get(workshopsURL)
       .then(response => {
@@ -38,35 +39,34 @@ function WorkshopsPage() {
   useEffect(() => {
     setIsLoading(true)
     axios.get(workshopsURL)
-    .then(response => {
-      setWorkshops(response.data.filter(workshop => {
+      .then(response => {
+        setWorkshops(response.data.filter(workshop => {
 
-        if (filterValues.topics) {
-          if (!filterValues.topics[workshop.topic.name]) {
-            return false
+          if (filterValues.topics) {
+            if (!filterValues.topics[workshop.topic.name]) {
+              return false
+            }
           }
-        }
-        if (filterValues.difficulty) {
-          if (!filterValues.difficulty[workshop.difficulty.name]) {
-            return false
+          if (filterValues.difficulty) {
+            if (!filterValues.difficulty[workshop.difficulty.name]) {
+              return false
+            }
           }
-        }
-        
-        return true
-      }))
-      setIsLoading(false)
-    })
 
-  },[filterValues])
+          return true
+        }))
+        setIsLoading(false)
+      })
+
+  }, [filterValues])
 
   return (
     <MainLayout>
-    {showEnrollModal && <EnrollModal setShowEnrollModal={setShowEnrollModal} clickedWorkshopId={clickedWorkshopId}/>}
+      {showEnrollModal && <EnrollModal setShowEnrollModal={setShowEnrollModal} clickedWorkshopId={clickedWorkshopId} />}
       <PageLayout filters={filters} filterValues={filterValues} setFilterValues={setFilterValues}>
-        {isLoading ? <LoadingSpinner spin={isLoading} /> : workshops.map(workshop => {
-          console.log(workshop)
-          return <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId}/>
-        })}
+        {isLoading ? <LoadingSpinner spin={isLoading} /> : workshops.map(workshop =>
+          <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} />
+        )}
       </PageLayout>
     </MainLayout>
   )

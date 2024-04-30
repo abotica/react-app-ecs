@@ -7,12 +7,17 @@ function EnrollModal({setShowEnrollModal, clickedWorkshopId}) {
     const [isSubmitting, setIsSubmitting] = useState(true)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    const [enrollmentData, setEnrollmentData] = useState({
+        name: '',
+        email: '',
+        reason: ''
+    })
 
 
 
   return (
     <ModalLayout handleCloseModal={() => setShowEnrollModal(false)}>
-        {isSubmitting ? <EnrollModalForm setIsSubmitting={setIsSubmitting} clickedWorkshopId={clickedWorkshopId} setError={setError} setSuccess={setSuccess}/> : <ModalAffirmationScreen error={error} success={success} isLoading={isSubmitting}/>}
+        {isSubmitting ? <EnrollModalForm setIsSubmitting={setIsSubmitting} clickedWorkshopId={clickedWorkshopId} setError={setError} setSuccess={setSuccess} enrollmentData={enrollmentData} setEnrollmentData={setEnrollmentData}/> : <ModalAffirmationScreen error={error} success={success} isLoading={isSubmitting}/>}
     </ModalLayout>
   )
 }

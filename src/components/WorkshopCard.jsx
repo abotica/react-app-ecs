@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 
-import expressIcon from '../assets/expressjs-icon.svg'
-import phpIcon from '../assets/php-icon.svg'
-import reactIcon from '../assets/reactjs-icon.svg'
-import wordpressIcon from '../assets/wordpress-icon.svg'
+import expressIcon from '../assets/logos/expressjs-icon.svg'
+import phpIcon from '../assets/logos/php-icon.svg'
+import reactIcon from '../assets/logos/reactjs-icon.svg'
+import wordpressIcon from '../assets/logos/wordpress-icon.svg'
 
 import Button from './ui/Button'
 

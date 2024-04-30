@@ -19,14 +19,14 @@
         "id": "junior",
         "name": "Junior"
       },
-      "enrolled": 0
+      "enrolled": 5
     }
   ],
   "predavaci": [
     {
       "id": "1f138ec8-5d9c-41a8-91d3-47bcd3c7fb5a",
       "name": "Andrija Botica",
-      "bio": "",
+      "bio": "Andrija je super lik. Andrija puno jede.",
       "organization": {
         "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
         "name": "Ericsson Nikola Tesla"
@@ -35,6 +35,40 @@
         {
           "id": "react",
           "name": "React"
+        }
+      ]
+    },
+    {
+      "id": "86ecc7e9-e12d-4967-82e8-762b9e60bcff",
+      "name": "Ivan Baricevic",
+      "bio": "Ivan je super lik. Ivan ne jede puno.",
+      "organization": {
+        "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
+        "name": "Ericsson Nikola Tesla"
+      },
+      "topics": [
+        {
+          "id": "react",
+          "name": "React"
+        },
+        {
+          "id": "php",
+          "name": "PHP"
+        }
+      ]
+    },
+    {
+      "id": "f6e157a8-ed77-4da0-8ea8-e849bd0c6e00",
+      "name": "Leonardo DaVinki",
+      "bio": "Leonardo DaVinki je bio pjesnik.",
+      "organization": {
+        "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
+        "name": "Ericsson Nikola Tesla"
+      },
+      "topics": [
+        {
+          "id": "wordpress",
+          "name": "Wordpress"
         }
       ]
     }
