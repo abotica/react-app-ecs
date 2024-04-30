@@ -65,7 +65,7 @@ function WorkshopsPage() {
       {showEnrollModal && <EnrollModal setShowEnrollModal={setShowEnrollModal} clickedWorkshopId={clickedWorkshopId} />}
       <PageLayout filters={filters} filterValues={filterValues} setFilterValues={setFilterValues}>
         {isLoading ? <LoadingSpinner spin={isLoading} /> : workshops.map(workshop =>
-          <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} />
+          <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} showEnrollButton={true}/>
         )}
       </PageLayout>
     </MainLayout>

@@ -1,3 +1,12 @@
+@import "react-slideshow-image/dist/styles.css";
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
+@font-face {
+    font-family: 'Bolts SF';
+    src: url('src/assets/fonts/boltssf.ttf') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,3 +16,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* .animate-underline-on-hover {
+
+} */

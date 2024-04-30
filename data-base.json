@@ -41,6 +41,27 @@
         "name": "Mid"
       },
       "enrolled": 0
+    },
+    {
+      "id": "8252739b-2082-44a5-8e44-a241d031cca4",
+      "name": "pb kutak",
+      "date": "2024-05-01",
+      "lecturers": [
+        {
+          "id": "755f585f-f281-4b23-b157-b37c08f1b1ae",
+          "name": "Baba Anka"
+        }
+      ],
+      "description": "baba tuce pb",
+      "topic": {
+        "id": "php",
+        "name": "PHP"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [
@@ -86,6 +107,21 @@
         {
           "id": "php",
           "name": "PHP"
+        }
+      ]
+    },
+    {
+      "id": "bc58956f-8a85-49c9-8287-9c948d51e182",
+      "name": "Iva Arlović",
+      "bio": "Iva je kraljica, ona ide na STEM Games.",
+      "organization": {
+        "id": "9a235c1c-cd72-4817-9179-8166f5193280",
+        "name": "Pevex"
+      },
+      "topics": [
+        {
+          "id": "express",
+          "name": "Express"
         }
       ]
     }

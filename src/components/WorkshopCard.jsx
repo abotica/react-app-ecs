@@ -9,7 +9,7 @@ import Button from './ui/Button'
 
 import AdminContext from '../contexts/AdminContext'
 
-function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId }) {
+function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, showEnrollButton }) {
     const {isAdmin} = useContext(AdminContext)
 
     function selectIcon() {
@@ -42,7 +42,7 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId }) {
                 <p className='font-thin'>{workshop.lecturers.map(lecturer => lecturer.name).join(', ')}</p>
             </div>
             <div className='flex justify-center mt-2'>
-                <Button onClick={() => {setShowEnrollModal(true); setClickedWorkshopId(workshop.id)}}>Prijavi se</Button>
+                {showEnrollButton && <Button onClick={() => {setShowEnrollModal(true); setClickedWorkshopId(workshop.id)}}>Prijavi se</Button>}
                 {isAdmin && <Button className='ml-1'>Uredi</Button>}
             </div>
         </div>

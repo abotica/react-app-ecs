@@ -1,6 +1,7 @@
 import React from 'react'
+
 import Navbar from '../components/Navbar'
-import CustomFooter from '../components/CustomFooter'
+import Footer from '../components/Footer'
 
 
 function MainLayout({children}) {
@@ -9,7 +10,7 @@ function MainLayout({children}) {
     <div className='h-screen flex flex-col'>
         <Navbar />
         {children}
-        <CustomFooter />
+        <Footer />
     </div>
   )
 }

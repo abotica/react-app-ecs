@@ -11,12 +11,16 @@ import LoadingSpinner from '../components/ui/LoadingSpinner'
 import LecturerCard from '../components/LecturerCard'
 import LecturersModal from '../components/LecturersModal'
 
+import { Outlet } from 'react-router-dom'
+import NavigateLecturersContext from '../contexts/NavigateLecturersContext'
+
 function LecturersPage() {
   const [lecturers, setLecturers] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [clickedLecturerId, setClickedLecturerId] = useState('')
   const [showEditLecturerModal, setShowEditLecturerModal] = useState(false)
   const [filterValues, setFilterValues] = useState({});
+
 
   const filters = [
     {
@@ -46,17 +50,21 @@ function LecturersPage() {
       })
   }, [])
 
-  useEffect(() => {
-    console.log(clickedLecturerId)
-  }, [clickedLecturerId])
-    
+
   return (
     <MainLayout>
-      <PageLayout filters={filters} filterValues={filterValues} setFilterValues={setFilterValues}>
-        {isLoading ? <LoadingSpinner /> : lecturers.map(lecturer =>
-          <LecturerCard key={lecturer.id} lecturer={lecturer} setClickedLecturerId={setClickedLecturerId}/>)
-        }
-      </PageLayout>
+    <NavigateLecturersContext.Provider value={{setClickedLecturerId: setClickedLecturerId, clickedLecturerId: clickedLecturerId}}>
+      {
+        clickedLecturerId ? <Outlet /> :
+        
+        <PageLayout filters={filters} filterValues={filterValues} setFilterValues={setFilterValues}>
+          {isLoading ? <LoadingSpinner /> : lecturers.map(lecturer =>
+            <LecturerCard key={lecturer.id} lecturer={lecturer} setClickedLecturerId={setClickedLecturerId} showSeeWorkshopsButton={true}/>)
+          }
+        </PageLayout>
+      }
+      </NavigateLecturersContext.Provider>
+
     </MainLayout>
   )
 }
