@@ -14,11 +14,11 @@ function Navbar() {
 
 
     return (
-        <nav className='bg-navbar-black sticky h-16 flex justify-between items-center'>
+        <nav className='bg-edit-blue sticky h-16 flex justify-between items-center'>
             <div className='flex items-center h-full'>
                 <Link className='h-full flex items-center' to={"/"}>
                     <img className='h-full w-auto' src={logo} alt="logo" />
-                    <span className='font-semibold flex flex-col h-full justify-center px-0.5'><span className='text-edit-blue text-4xl'>EDIT</span><span className='text-edit-yellow text-xl'>CodeSchool</span></span>
+                    <span className='font-semibold flex flex-col h-full justify-center px-0.5'><span className='text-edit-blue text-4xl drop-shadow-lg-white'>EDIT</span><span className='text-edit-yellow text-xl'>CodeSchool</span></span>
                 </Link>
             </div>
 

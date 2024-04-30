@@ -10,7 +10,7 @@ function ToggleButton() {
 
     return (
         <>
-            <label className='autoSaverSwitch relative inline-flex cursor-pointer select-none items-center'>
+            <label className='autoSaverSwitch relative inline-flex cursor-pointer select-none items-center border rounded-full drop-shadow-lg-white'>
                 <input
                     type='checkbox'
                     name='autoSaver'

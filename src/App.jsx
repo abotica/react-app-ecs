@@ -16,7 +16,7 @@ import LecturersAdminPage from "./pages/subpages/LecturersAdminPage"
 
 
 function App() {
-  const baseURL = "http://192.168.0.68:3000"
+  const baseURL = "http://localhost:3000"
   const workshopsURL = `${baseURL}/radionice`
   const lecturersURL = `${baseURL}/predavaci`
   const organizationsURL = `${baseURL}/organizacije`

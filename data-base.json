@@ -1,69 +1,56 @@
 {
   "radionice": [
     {
-      "id": "6ddd4865-7676-43fd-b677-e9cd77e99811",
-      "name": "React JuniorDev",
-      "date": "2024-05-01",
+      "id": "a7885f11-934f-4e74-8eb1-4fc32581bc43",
+      "name": "Radionica",
+      "date": "2024-05-04",
       "lecturers": [
         {
-          "id": "40f80730-30e1-41c9-856b-93946e9bfcd5",
-          "name": "Andrija Botica"
+          "id": "755f585f-f281-4b23-b157-b37c08f1b1ae",
+          "name": "Baba Anka"
         }
       ],
-      "description": "Opis",
+      "description": "Opis radionice.",
       "topic": {
-        "id": "react",
-        "name": "React"
+        "id": "wordpress",
+        "name": "Wordpress"
       },
       "difficulty": {
-        "id": "junior",
-        "name": "Junior"
+        "id": "mid",
+        "name": "Mid"
       },
-      "enrolled": 5
+      "enrolled": 0
+    },
+    {
+      "id": "5f301321-d882-4fdc-9735-d8b833b23c7f",
+      "name": "Andrija",
+      "date": "2024-04-10",
+      "lecturers": [
+        {
+          "id": "755f585f-f281-4b23-b157-b37c08f1b1ae",
+          "name": "Baba Anka"
+        }
+      ],
+      "description": "KJBDWkahaoj",
+      "topic": {
+        "id": "express",
+        "name": "Express"
+      },
+      "difficulty": {
+        "id": "mid",
+        "name": "Mid"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [
     {
-      "id": "1f138ec8-5d9c-41a8-91d3-47bcd3c7fb5a",
-      "name": "Andrija Botica",
-      "bio": "Andrija je super lik. Andrija puno jede.",
+      "id": "755f585f-f281-4b23-b157-b37c08f1b1ae",
+      "name": "Baba Anka",
+      "bio": "Sveznalica.",
       "organization": {
-        "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
-        "name": "Ericsson Nikola Tesla"
-      },
-      "topics": [
-        {
-          "id": "react",
-          "name": "React"
-        }
-      ]
-    },
-    {
-      "id": "86ecc7e9-e12d-4967-82e8-762b9e60bcff",
-      "name": "Ivan Baricevic",
-      "bio": "Ivan je super lik. Ivan ne jede puno.",
-      "organization": {
-        "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
-        "name": "Ericsson Nikola Tesla"
-      },
-      "topics": [
-        {
-          "id": "react",
-          "name": "React"
-        },
-        {
-          "id": "php",
-          "name": "PHP"
-        }
-      ]
-    },
-    {
-      "id": "f6e157a8-ed77-4da0-8ea8-e849bd0c6e00",
-      "name": "Leonardo DaVinki",
-      "bio": "Leonardo DaVinki je bio pjesnik.",
-      "organization": {
-        "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
-        "name": "Ericsson Nikola Tesla"
+        "id": "d4a044e1-2179-4807-be7d-1f8df62755fe",
+        "name": "Lidl"
       },
       "topics": [
         {
@@ -71,16 +58,46 @@
           "name": "Wordpress"
         }
       ]
+    },
+    {
+      "id": "37c37ae6-18c0-441f-96ef-5eafc8bb1919",
+      "name": "Ivo Ivić",
+      "bio": "On je kraljina.",
+      "organization": {
+        "id": "d4a044e1-2179-4807-be7d-1f8df62755fe",
+        "name": "Lidl"
+      },
+      "topics": [
+        {
+          "id": "wordpress",
+          "name": "Wordpress"
+        }
+      ]
+    },
+    {
+      "id": "4580c202-9c71-44bb-9dd6-fde80d1a0642",
+      "name": "Ivan Baricevic",
+      "bio": "ASDsdsaS",
+      "organization": {
+        "id": "d4a044e1-2179-4807-be7d-1f8df62755fe",
+        "name": "Lidl"
+      },
+      "topics": [
+        {
+          "id": "php",
+          "name": "PHP"
+        }
+      ]
     }
   ],
   "organizacije": [
     {
-      "id": "54c49e29-dc06-4171-b579-8a133d75a6d1",
-      "name": "Ericsson Nikola Tesla",
+      "id": "9a235c1c-cd72-4817-9179-8166f5193280",
+      "name": "Pevex",
       "workshops": [
         {
-          "id": "6ddd4865-7676-43fd-b677-e9cd77e99811",
-          "name": "React JuniorDev"
+          "id": "a7885f11-934f-4e74-8eb1-4fc32581bc43",
+          "name": "Radionica"
         }
       ],
       "description": ""

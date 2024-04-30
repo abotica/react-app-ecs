@@ -74,7 +74,7 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
             <Input type='text' name='name' value={lecturer.name} handleOnChange={handleOnChange} placeholder='Ime i prezime predavača' />
             <Select className='my-4' defaultValue={organizationsOptions.filter(org => org.value === lecturer.organization.id)} value={lecturer.organization.value} onChange={selectedOption => handleOnChangeSelectOrganization(selectedOption)} options={organizationsOptions} placeholder='Odaberite organizaciju predavača' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
             <Select className='my-4' isMulti defaultValue={topicsOptions.filter(topic => lecturer.topics.find(obj => obj.id === topic.value))} value={lecturer.topics.name} onChange={selectedOptions => handleOnChangeSelectTopics(selectedOptions)} options={topicsOptions} placeholder='Odaberite teme koje predavač predaje' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
-            <Input type='textarea' name='bio' value={lecturer.description} handleOnChange={handleOnChange} placeholder='Opis predavača' />
+            <Input type='textarea' name='bio' value={lecturer.bio} handleOnChange={handleOnChange} placeholder='Opis predavača' />
             {editData ? <Button>Izmijeni podatke</Button> : <Button>Dodaj</Button>}
         </form>
 

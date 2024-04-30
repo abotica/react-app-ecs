@@ -19,7 +19,7 @@ function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, 
               name: rowData.name
             }
           ); setShowModal(true)}}>Uredi</Button>
-          <Button onClick={() => {setShowDeleteAffirmationModal(true); setDeleteData({
+          <Button className='ml-1' onClick={() => {setShowDeleteAffirmationModal(true); setDeleteData({
             id: rowData.id,
             name: rowData.name
           })}}>Izbriši</Button>

@@ -43,7 +43,7 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId }) {
             </div>
             <div className='flex justify-center mt-2'>
                 <Button onClick={() => {setShowEnrollModal(true); setClickedWorkshopId(workshop.id)}}>Prijavi se</Button>
-                {isAdmin && <Button>Uredi</Button>}
+                {isAdmin && <Button className='ml-1'>Uredi</Button>}
             </div>
         </div>
     )
