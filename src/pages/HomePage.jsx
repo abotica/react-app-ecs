@@ -54,7 +54,7 @@ function HomePage() {
           <p className='text-2xl text-center'>Naša škola nudi radionice iz raznih područja programiranja. Pogledajte naš raspored radionica i prijavite se na neku od njih.</p>
         </div>
         <div>
-          <h1 className='text-6xl font-bolts-sf text-edit-blue text-center'>Predavači</h1>
+          <h1 className='text-6xl font-bolts-sf text-edit-blue text-center'>Predavać</h1>
           <p className='text-2xl text-center'>Naši predavači su stručnjaci u svojim područjima i uvijek su spremni pomoći. Pogledajte njihove profile i radionice koje drže.</p>
         </div>
       </div>

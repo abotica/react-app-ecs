@@ -62,6 +62,31 @@
         "name": "Senior"
       },
       "enrolled": 0
+    },
+    {
+      "id": "5bce5068-31ef-4c0c-a696-0935ac636f14",
+      "name": "Wordpress",
+      "date": "2024-05-29",
+      "lecturers": [
+        {
+          "id": "bc58956f-8a85-49c9-8287-9c948d51e182",
+          "name": "Iva Arlović"
+        },
+        {
+          "id": "4580c202-9c71-44bb-9dd6-fde80d1a0642",
+          "name": "Ivan Baricevic"
+        }
+      ],
+      "description": "Ovo jew opis noajisfhnfiosbncsvadiobncvasoiuhacb9oi9hcavfsdoiuacfhsvdoafhsdofasdnbafosdnbvadfsonavsdnvsdal.ksfnsbkbfidlhgafgilvdfsahapiovdfsehgvdsfiasdvgbvdigdsvilvdgvdilsdvfgbsdvibvscdaibafdvibcvadsibaicaBVACIgvsxaigvasxcilacgvyfkuacfgcasdxkuacsdfgx",
+      "topic": {
+        "id": "wordpress",
+        "name": "Wordpress"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [
@@ -124,6 +149,21 @@
           "name": "Express"
         }
       ]
+    },
+    {
+      "id": "7d961756-e23e-4b25-ac29-0e9ffd8f54c5",
+      "name": "Lala La",
+      "bio": "Hehe",
+      "organization": {
+        "id": "557b5f3d-e5e6-42d0-8273-551b65e4cae0",
+        "name": "Emezetta"
+      },
+      "topics": [
+        {
+          "id": "express",
+          "name": "Express"
+        }
+      ]
     }
   ],
   "organizacije": [
@@ -134,6 +174,28 @@
         {
           "id": "a7885f11-934f-4e74-8eb1-4fc32581bc43",
           "name": "Radionica"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "id": "53528a8d-9cc8-4d0f-b688-cfd8c98bc1c6",
+      "name": "Lidl",
+      "workshops": [
+        {
+          "id": "a7885f11-934f-4e74-8eb1-4fc32581bc43",
+          "name": "Radionica"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "id": "557b5f3d-e5e6-42d0-8273-551b65e4cae0",
+      "name": "Emezetta",
+      "workshops": [
+        {
+          "id": "5bce5068-31ef-4c0c-a696-0935ac636f14",
+          "name": "Wordpress"
         }
       ],
       "description": ""

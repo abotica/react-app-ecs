@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 
 import MainLayout from '../layout/MainLayout'
 import PageLayout from '../layout/PageLayout'
@@ -19,10 +19,12 @@ function LecturersPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [clickedLecturerId, setClickedLecturerId] = useState('')
   const [showEditLecturerModal, setShowEditLecturerModal] = useState(false)
-  const [filterValues, setFilterValues] = useState({});
+  const [selectedFilters, setSelectedFilters] = useState([])
+  const [filteredItems, setFilteredItems] = useState([])
+  const organizationsOptions = useRef([])
 
 
-  const filters = [
+  const filterOptions = [
     {
       id: 'topics',
       name: 'Teme',
@@ -31,18 +33,23 @@ function LecturersPage() {
     {
       id: 'organizations',
       name: 'Organizacije',
-      options: ['Digitalna Dalmacija', 'Locastic', 'Lorem ipsum']
+      options: organizationsOptions.current
     }
   ]
 
-  const { lecturersURL } = useContext(UrlContext)
+  const { lecturersURL, organizationsURL } = useContext(UrlContext)
 
   // fetch lecturers on page load
   useEffect(() => {
+    axios.get(organizationsURL)
+    .then(response => {
+      organizationsOptions.current = response.data.map(organization => organization.name)
+    })
+
     axios.get(lecturersURL)
       .then(response => {
         setLecturers(response.data)
-        console.log(response.data)
+        setFilteredItems(response.data)
         setIsLoading(false)
       })
       .catch(error => {
@@ -57,8 +64,8 @@ function LecturersPage() {
       {
         clickedLecturerId ? <Outlet /> :
         
-        <PageLayout filters={filters} filterValues={filterValues} setFilterValues={setFilterValues}>
-          {isLoading ? <LoadingSpinner /> : lecturers.map(lecturer =>
+        <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={lecturers} setFilteredItems={setFilteredItems} >
+          {isLoading ? <LoadingSpinner /> : filteredItems.map(lecturer =>
             <LecturerCard key={lecturer.id} lecturer={lecturer} setClickedLecturerId={setClickedLecturerId} showSeeWorkshopsButton={true}/>)
           }
         </PageLayout>

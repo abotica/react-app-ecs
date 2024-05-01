@@ -16,18 +16,30 @@ function WorkshopsPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [showEnrollModal, setShowEnrollModal] = useState(false)
   const [clickedWorkshopId, setClickedWorkshopId] = useState('')
-  const [filterValues, setFilterValues] = useState({});
+  const [selectedFilters, setSelectedFilters] = useState([])
+  const [filteredItems, setFilteredItems] = useState([])
 
-  const filters = [{ id: 'topics', name: 'Teme', options: ['React', 'PHP', 'Express', 'Wordpress'] }, { id: 'difficulty', name: 'Težina', options: ['Junior', 'Mid', 'Senior'] }]
+  const filterOptions = [
+    {
+      id: 'topics',
+      name: 'Teme',
+      options: ['React', 'PHP', 'Express', 'Wordpress']
+    },
+    {
+      id: 'difficulty',
+      name: 'Težina',
+      options: ['Junior', 'Mid', 'Senior']
+    }
+  ]
 
   const { workshopsURL } = useContext(UrlContext)
 
-  // fetch workshops on page load
+  // fetch workshops on page load and initialize filteredItems
   useEffect(() => {
     axios.get(workshopsURL)
       .then(response => {
         setWorkshops(response.data)
-        console.log(response.data)
+        setFilteredItems(response.data)
         setIsLoading(false)
       })
       .catch(error => {
@@ -35,37 +47,12 @@ function WorkshopsPage() {
       })
   }, [])
 
-  //trebaju radit neovisno jedan o drugome sa ILI ne I
-  useEffect(() => {
-    setIsLoading(true)
-    axios.get(workshopsURL)
-      .then(response => {
-        setWorkshops(response.data.filter(workshop => {
-
-          if (filterValues.topics) {
-            if (!filterValues.topics[workshop.topic.name]) {
-              return false
-            }
-          }
-          if (filterValues.difficulty) {
-            if (!filterValues.difficulty[workshop.difficulty.name]) {
-              return false
-            }
-          }
-
-          return true
-        }))
-        setIsLoading(false)
-      })
-
-  }, [filterValues])
-
   return (
     <MainLayout>
       {showEnrollModal && <EnrollModal setShowEnrollModal={setShowEnrollModal} clickedWorkshopId={clickedWorkshopId} />}
-      <PageLayout filters={filters} filterValues={filterValues} setFilterValues={setFilterValues}>
-        {isLoading ? <LoadingSpinner spin={isLoading} /> : workshops.map(workshop =>
-          <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} showEnrollButton={true}/>
+      <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={workshops} setFilteredItems={setFilteredItems}>
+        {isLoading ? <LoadingSpinner spin={isLoading} /> : filteredItems.map(workshop =>
+          <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} showEnrollButton={true} />
         )}
       </PageLayout>
     </MainLayout>
