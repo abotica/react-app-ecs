@@ -44,7 +44,7 @@
     },
     {
       "id": "8252739b-2082-44a5-8e44-a241d031cca4",
-      "name": "pb kutak",
+      "name": "PB Kralj",
       "date": "2024-05-01",
       "lecturers": [
         {
@@ -65,7 +65,7 @@
     },
     {
       "id": "5bce5068-31ef-4c0c-a696-0935ac636f14",
-      "name": "Wordpress",
+      "name": "Budi Word!",
       "date": "2024-05-29",
       "lecturers": [
         {
@@ -79,12 +79,12 @@
       ],
       "description": "Ovo jew opis noajisfhnfiosbncsvadiobncvasoiuhacb9oi9hcavfsdoiuacfhsvdoafhsdofasdnbafosdnbvadfsonavsdnvsdal.ksfnsbkbfidlhgafgilvdfsahapiovdfsehgvdsfiasdvgbvdigdsvilvdgvdilsdvfgbsdvibvscdaibafdvibcvadsibaicaBVACIgvsxaigvasxcilacgvyfkuacfgcasdxkuacsdfgx",
       "topic": {
-        "id": "wordpress",
-        "name": "Wordpress"
+        "id": "php",
+        "name": "PHP"
       },
       "difficulty": {
-        "id": "senior",
-        "name": "Senior"
+        "id": "mid",
+        "name": "Mid"
       },
       "enrolled": 0
     }

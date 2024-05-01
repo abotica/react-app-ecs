@@ -55,6 +55,7 @@ function WorkshopsPage() {
     axios.get(workshopsURL)
     .then(response => {
       setWorkshops(response.data)
+      setFilteredItems(response.data)
   })
     .catch(error => {
       console.error(error)

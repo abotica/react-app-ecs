@@ -14,6 +14,7 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
     const {isAdmin} = useContext(AdminContext)
     const {setEditData} = useContext(CommonStatesContext)
 
+    console.log(workshop, "Ovo je workshop")
     function selectIcon() {
         switch (workshop.topic.name) {
             case 'React':
@@ -33,7 +34,9 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
     return (
         <div  className='w-5/12 h-max flex flex-col rounded-xl bg-white shadow-md p-6 my-2'>
             <div className='h-fit w-full flex flex-col'>
-                <p className='font-semibold text-3xl text-center w-full'>{workshop.topic.name}</p>
+                <p className='font-semibold text-3xl text-center w-full'>{workshop.name}</p>
+                <p className='font-semibold italic my-2'>TEMA</p>
+                <p className='font-thin'>{workshop.topic.name}</p>
                 <p className='font-semibold italic my-2'>OPIS</p>
                 <div className='font-thin break-words w-full'>{workshop.description}</div>
                 <p className='font-semibold italic my-2'>TEŽINA</p>
