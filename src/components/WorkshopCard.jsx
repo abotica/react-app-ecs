@@ -8,9 +8,11 @@ import wordpressIcon from '../assets/logos/wordpress-icon.svg'
 import Button from './ui/Button'
 
 import AdminContext from '../contexts/AdminContext'
+import CommonStatesContext from '../contexts/CommonStatesContext'
 
-function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, showEnrollButton }) {
+function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, showEnrollButton, setShowWorkshopsModal }) {
     const {isAdmin} = useContext(AdminContext)
+    const {setEditData} = useContext(CommonStatesContext)
 
     function selectIcon() {
         switch (workshop.topic.name) {
@@ -29,11 +31,11 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
     }
 
     return (
-        <div  className='w-5/12 h-5/12 flex flex-col rounded-xl bg-white shadow-md p-6 my-2'>
-            <div className='h-fit flex flex-col items-center'>
-                <p className='font-semibold text-3xl'>{workshop.topic.name}</p>
+        <div  className='w-5/12 h-max flex flex-col rounded-xl bg-white shadow-md p-6 my-2'>
+            <div className='h-fit w-full flex flex-col'>
+                <p className='font-semibold text-3xl text-center w-full'>{workshop.topic.name}</p>
                 <p className='font-semibold italic my-2'>OPIS</p>
-                <div className='font-thin text-balance w-10/12 h-fit text-center'>{workshop.description}</div>
+                <div className='font-thin break-words w-full'>{workshop.description}</div>
                 <p className='font-semibold italic my-2'>TEŽINA</p>
                 <p className='font-thin'>{workshop.difficulty.name}</p>
                 <p className='font-semibold italic my-2'>DATUM ODRŽAVANJA</p>
@@ -41,9 +43,9 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
                 <p className='font-semibold italic my-2'>PREDAVAČI</p>
                 <p className='font-thin'>{workshop.lecturers.map(lecturer => lecturer.name).join(', ')}</p>
             </div>
-            <div className='flex justify-center mt-2'>
+            <div className='flex justify-center mt-2 h-fit'>
                 {showEnrollButton && <Button onClick={() => {setShowEnrollModal(true); setClickedWorkshopId(workshop.id)}}>Prijavi se</Button>}
-                {isAdmin && <Button className='ml-1'>Uredi</Button>}
+                {isAdmin && <Button className='ml-1' onClick={() => {setShowWorkshopsModal(true); setClickedWorkshopId(workshop.id); setEditData(true)}}>Uredi</Button>}
             </div>
         </div>
     )

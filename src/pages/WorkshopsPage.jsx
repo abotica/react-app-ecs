@@ -10,6 +10,8 @@ import UrlContext from '../contexts/UrlContext'
 import WorkshopCard from '../components/WorkshopCard'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import EnrollModal from '../components/EnrollModal'
+import ModalsContext from '../contexts/ModalsContext'
+import WorkshopsModal from '../components/WorkshopsModal'
 
 function WorkshopsPage() {
   const [workshops, setWorkshops] = useState([])
@@ -18,6 +20,8 @@ function WorkshopsPage() {
   const [clickedWorkshopId, setClickedWorkshopId] = useState('')
   const [selectedFilters, setSelectedFilters] = useState([])
   const [filteredItems, setFilteredItems] = useState([])
+
+  const { showWorkshopsModal, setShowWorkshopsModal } = useContext(ModalsContext)
 
   const filterOptions = [
     {
@@ -47,12 +51,23 @@ function WorkshopsPage() {
       })
   }, [])
 
+  function handleDataRefresh() {
+    axios.get(workshopsURL)
+    .then(response => {
+      setWorkshops(response.data)
+  })
+    .catch(error => {
+      console.error(error)
+    })
+  }
+
   return (
     <MainLayout>
       {showEnrollModal && <EnrollModal setShowEnrollModal={setShowEnrollModal} clickedWorkshopId={clickedWorkshopId} />}
+      {showWorkshopsModal && <WorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} handleDataRefresh={handleDataRefresh} editDataId={clickedWorkshopId}/>}
       <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={workshops} setFilteredItems={setFilteredItems}>
         {isLoading ? <LoadingSpinner spin={isLoading} /> : filteredItems.map(workshop =>
-          <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} showEnrollButton={true} />
+          <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} showEnrollButton={true} setShowWorkshopsModal={setShowWorkshopsModal} />
         )}
       </PageLayout>
     </MainLayout>

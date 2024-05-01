@@ -18,7 +18,7 @@ function WorkshopsModal({ setShowWorkshopsModal, handleDataRefresh, editDataId }
 
   // getting the URL for fetching lecturers from the API
   const { lecturersURL, workshopsURL } = useContext(UrlContext)
-  const {editData, setEditData} = useContext(CommonStatesContext)
+  const {editData} = useContext(CommonStatesContext)
 
   const [isLoading, setIsLoading] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
