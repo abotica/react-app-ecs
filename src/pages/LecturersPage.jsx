@@ -13,16 +13,18 @@ import LecturersModal from '../components/LecturersModal'
 
 import { Outlet } from 'react-router-dom'
 import NavigateLecturersContext from '../contexts/NavigateLecturersContext'
+import ModalsContext from '../contexts/ModalsContext'
 
 function LecturersPage() {
   const [lecturers, setLecturers] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [clickedLecturerId, setClickedLecturerId] = useState('')
-  const [showEditLecturerModal, setShowEditLecturerModal] = useState(false)
+  const [showLecturerPage, setShowLecturerPage] = useState(false)
   const [selectedFilters, setSelectedFilters] = useState([])
   const [filteredItems, setFilteredItems] = useState([])
   const organizationsOptions = useRef([])
 
+  const {showLecturersModal, setShowLecturersModal} = useContext(ModalsContext)
 
   const filterOptions = [
     {
@@ -57,16 +59,28 @@ function LecturersPage() {
       })
   }, [])
 
+  function handleDataRefresh() {
+    axios.get(lecturersURL)
+      .then(response => {
+        setLecturers(response.data)
+        setFilteredItems(response.data)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
 
   return (
     <MainLayout>
+    {showLecturersModal && <LecturersModal setShowLecturersModal={setShowLecturersModal} handleDataRefresh={handleDataRefresh} editDataId={clickedLecturerId}/>}
     <NavigateLecturersContext.Provider value={{setClickedLecturerId: setClickedLecturerId, clickedLecturerId: clickedLecturerId}}>
       {
-        clickedLecturerId ? <Outlet /> :
+        showLecturerPage ? <Outlet /> :
         
         <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={lecturers} setFilteredItems={setFilteredItems} >
           {isLoading ? <LoadingSpinner /> : filteredItems.map(lecturer =>
-            <LecturerCard key={lecturer.id} lecturer={lecturer} setClickedLecturerId={setClickedLecturerId} showSeeWorkshopsButton={true}/>)
+            <LecturerCard key={lecturer.id} lecturer={lecturer} setClickedLecturerId={setClickedLecturerId} showSeeWorkshopsButton={true} setShowLecturersModal={setShowLecturersModal} setShowLecturerPage={setShowLecturerPage}/>)
           }
         </PageLayout>
       }

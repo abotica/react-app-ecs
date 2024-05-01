@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Bolts SF';
-    src: url('src/assets/fonts/Bolts SF Regular.ttf') format('truetype');
+    src: url('src/assets/fonts/boltssf.ttf') format('truetype');
 }
 
 @tailwind base;

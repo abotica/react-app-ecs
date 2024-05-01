@@ -6,9 +6,11 @@ import AdminContext from '../contexts/AdminContext'
 
 import lecturerPhoto from '../assets/lecturers/Chelsey Dietrich.jpg'
 import { Link } from 'react-router-dom'
+import CommonStatesContext from '../contexts/CommonStatesContext'
 
-function LecturerCard({ lecturer, setClickedLecturerId, showSeeWorkshopsButton }) {
+function LecturerCard({ lecturer, setClickedLecturerId, showSeeWorkshopsButton, setShowLecturersModal, setShowLecturerPage }) {
     const { isAdmin } = useContext(AdminContext)
+    const {setEditData} = useContext(CommonStatesContext)
 
     return (
         <div className='w-8/12 h-2/5 flex rounded-xl bg-white shadow-md p-6 my-2 items-center'>
@@ -21,8 +23,8 @@ function LecturerCard({ lecturer, setClickedLecturerId, showSeeWorkshopsButton }
                 <p className='font-semibold italic my-2'>TEME PREDAVANJA</p>
                 <p className='font-thin'>{lecturer.topics.map(topic => topic.name).join(', ')}</p>
                 <div className='flex'>
-                    {showSeeWorkshopsButton && <Link to={lecturer.id}><Button onClick={()=> {setClickedLecturerId(lecturer.id)}}>Pregledaj radionice</Button></Link>}
-                    {isAdmin && <Button className='ml-1'>Uredi</Button>}
+                    {showSeeWorkshopsButton && <Link to={lecturer.id}><Button onClick={()=> {setClickedLecturerId(lecturer.id); setShowLecturerPage(true)}}>Pregledaj radionice</Button></Link>}
+                    {isAdmin && <Button className='ml-1' onClick={() => {setShowLecturersModal(true); setClickedLecturerId(lecturer.id); setEditData(true)}}>Uredi</Button>}
                 </div>
             </div>
             <div className='h-64 w-64'>

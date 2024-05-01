@@ -152,16 +152,20 @@
     },
     {
       "id": "7d961756-e23e-4b25-ac29-0e9ffd8f54c5",
-      "name": "Lala La",
+      "name": "Lala Larica",
       "bio": "Hehe",
       "organization": {
-        "id": "557b5f3d-e5e6-42d0-8273-551b65e4cae0",
-        "name": "Emezetta"
+        "id": "9a235c1c-cd72-4817-9179-8166f5193280",
+        "name": "Pevex"
       },
       "topics": [
         {
           "id": "express",
           "name": "Express"
+        },
+        {
+          "id": "wordpress",
+          "name": "Wordpress"
         }
       ]
     }
