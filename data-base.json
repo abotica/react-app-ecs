@@ -2,7 +2,7 @@
   "radionice": [
     {
       "id": "a7885f11-934f-4e74-8eb1-4fc32581bc43",
-      "name": "Radionica",
+      "name": "Radionica je kralj",
       "date": "2024-05-04",
       "lecturers": [
         {
@@ -19,7 +19,7 @@
         "id": "mid",
         "name": "Mid"
       },
-      "enrolled": 0
+      "enrolled": 1
     },
     {
       "id": "5f301321-d882-4fdc-9735-d8b833b23c7f",
@@ -39,27 +39,6 @@
       "difficulty": {
         "id": "mid",
         "name": "Mid"
-      },
-      "enrolled": 0
-    },
-    {
-      "id": "8252739b-2082-44a5-8e44-a241d031cca4",
-      "name": "PB Kralj",
-      "date": "2024-05-01",
-      "lecturers": [
-        {
-          "id": "755f585f-f281-4b23-b157-b37c08f1b1ae",
-          "name": "Baba Anka"
-        }
-      ],
-      "description": "baba tuce pb",
-      "topic": {
-        "id": "php",
-        "name": "PHP"
-      },
-      "difficulty": {
-        "id": "senior",
-        "name": "Senior"
       },
       "enrolled": 0
     },
@@ -168,6 +147,44 @@
           "name": "Wordpress"
         }
       ]
+    },
+    {
+      "id": "06d1599c-2c33-4a25-9869-3c70d093ad99",
+      "name": "Dokky",
+      "bio": "Dokky je kralj. Dokky jede leba braleeeeee. HŽV",
+      "organization": {
+        "id": "353d7357-6ac0-4eee-933e-4f183162a433",
+        "name": "FESB"
+      },
+      "topics": [
+        {
+          "id": "react",
+          "name": "React"
+        },
+        {
+          "id": "express",
+          "name": "Express"
+        }
+      ]
+    },
+    {
+      "id": "c936e288-bd42-4f99-be30-19f038f254b3",
+      "name": "Test Test",
+      "bio": "asnoanslnaknoLn kANL anlfnal fna NFLNFN LNFLN LANF LN LFNALKNFSDLNFLAKNLFNSLFN Ln al nlanf ln lnalfn land fnaanl nsaflananflnl fnlasnd .",
+      "organization": {
+        "id": "353d7357-6ac0-4eee-933e-4f183162a433",
+        "name": "FESB"
+      },
+      "topics": [
+        {
+          "id": "express",
+          "name": "Express"
+        },
+        {
+          "id": "php",
+          "name": "PHP"
+        }
+      ]
     }
   ],
   "organizacije": [
@@ -200,6 +217,17 @@
         {
           "id": "5bce5068-31ef-4c0c-a696-0935ac636f14",
           "name": "Wordpress"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "id": "353d7357-6ac0-4eee-933e-4f183162a433",
+      "name": "FESB",
+      "workshops": [
+        {
+          "id": "5bce5068-31ef-4c0c-a696-0935ac636f14",
+          "name": "Budi Word!"
         }
       ],
       "description": ""
