@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 
 import Button from './ui/Button'
+import { set } from 'lodash'
 
-function WorkshopsFilters({ filterOptions, selectedFilters, setSelectedFilters, items, setFilteredItems }) {
+function WorkshopsFilters({ filterOptions, selectedFilters, setSelectedFilters, items, setFilteredItems}) {
 
   function handleFilterClick(option) {
     if(selectedFilters.includes(option)) {
@@ -18,6 +19,7 @@ function WorkshopsFilters({ filterOptions, selectedFilters, setSelectedFilters, 
     filterItems()
   }, [selectedFilters])
 
+
   function filterItems() {
     // If no filters are selected, return all items
     if (selectedFilters.length === 0) {
@@ -26,6 +28,7 @@ function WorkshopsFilters({ filterOptions, selectedFilters, setSelectedFilters, 
     }
   
     let tempItems = items.filter(item => {
+      
       // Separate the selected filters into topic filters and difficulty filters
       const topicFilters = selectedFilters.filter(filter => filterOptions[0].options.includes(filter));
       const difficultyFilters = selectedFilters.filter(filter => filterOptions[1].options.includes(filter));
@@ -36,10 +39,10 @@ function WorkshopsFilters({ filterOptions, selectedFilters, setSelectedFilters, 
       // Check if the item's difficulty matches any selected difficulty filter
       const matchesDifficulty = difficultyFilters.length === 0 || difficultyFilters.includes(item.difficulty.name);
   
-      // Include the item if it matches any selected topic filters and any selected difficulty filter
+      // Include the item if it matches any selected topic filters and any selected difficulty filters
       return matchesTopic && matchesDifficulty;
     });
-  
+    
     setFilteredItems(tempItems);
   }
       

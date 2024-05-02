@@ -17,8 +17,7 @@ function Navbar() {
         <nav className='bg-edit-blue sticky h-16 flex justify-between items-center'>
             <div className='flex items-center h-full'>
                 <Link className='h-full flex items-center' to={"/"}>
-                    <img className='h-full w-auto' src={logo} alt="logo" />
-                    <span className='font-bolts-sf flex flex-col h-full justify-center px-0.5'><span className='text-edit-blue text-4xl'>EDIT</span><span className='text-edit-yellow text-2xl'>CODE SCHOOL</span></span>
+                    <img src='src/assets/logos/DDalm_footer.png' alt='logo' style={{height: 'calc(100% - 10px)'}} className='pl-1' />
                 </Link>
             </div>
 

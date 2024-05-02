@@ -12,7 +12,7 @@ function LecturersWorkshopsPage() {
   const navigate = useNavigate()
   const [lecturersWorkshops, setLecturersWorkshops] = useState([])
   const [lecturer, setLecturer] = useState({})
-  const { setClickedLecturerId, clickedLecturerId } = useContext(NavigateLecturersContext)
+  const { setClickedLecturerId, clickedLecturerId, setShowLecturerPage } = useContext(NavigateLecturersContext)
   const { workshopsURL, lecturersURL } = useContext(UrlContext)
   const [isLoadingLecturers, setIsLoadingLecturers] = useState(true)
   const [isLoadingWorkshops, setIsLoadingWorkshops] = useState(true)
@@ -41,7 +41,7 @@ function LecturersWorkshopsPage() {
 
   return (
     <div className='flex flex-col h-full justify-center items-center relative'>
-      <div className='flex w-full mt-2 h-max absolute top-0 left-0'><Button onClick={() => { navigate(-1); setClickedLecturerId('') }} className='ml-2'>Natrag na sve predavače</Button></div>
+      <div className='flex w-full mt-2 h-max absolute top-0 left-0'><Button onClick={() => { navigate(-1); setClickedLecturerId(''); setShowLecturerPage(false) }} className='ml-2'>Natrag na sve predavače</Button></div>
 
       { !isLoadingLecturers && <LecturerCard lecturer={lecturer} setClickedLecturerId={clickedLecturerId} showSeeWorkshopsButton={false} />}
       <div className='flex flex-wrap justify-evenly items-center w-full h-max'>

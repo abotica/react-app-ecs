@@ -10,7 +10,7 @@ function ToggleButton() {
 
     return (
         <>
-            <label className='autoSaverSwitch relative inline-flex cursor-pointer select-none items-center border rounded-full drop-shadow-lg-white'>
+            <label className='autoSaverSwitch relative inline-flex cursor-pointer select-none items-center border border-gray-200 rounded-full drop-shadow-lg-white'>
                 <input
                     type='checkbox'
                     name='autoSaver'
@@ -28,7 +28,7 @@ function ToggleButton() {
                     ></span>
                 </span>
             </label>
-            <span className='label flex items-center text-sm font-medium text-white'>
+            <span className='label flex items-center text-sm font-medium text-white '>
                     <span className='pr-2 pl-2'> {isAdmin ? 'Admin' : 'User'} </span>
             </span>
         </>

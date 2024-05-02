@@ -74,7 +74,7 @@ function LecturersPage() {
   return (
     <MainLayout>
     {showLecturersModal && <LecturersModal setShowLecturersModal={setShowLecturersModal} handleDataRefresh={handleDataRefresh} editDataId={clickedLecturerId}/>}
-    <NavigateLecturersContext.Provider value={{setClickedLecturerId: setClickedLecturerId, clickedLecturerId: clickedLecturerId}}>
+    <NavigateLecturersContext.Provider value={{setClickedLecturerId: setClickedLecturerId, clickedLecturerId: clickedLecturerId, setShowLecturerPage: setShowLecturerPage}}>
       {
         showLecturerPage ? <Outlet /> :
         

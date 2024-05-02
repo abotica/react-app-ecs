@@ -8,7 +8,6 @@ import axios from 'axios'
 import UrlContext from '../contexts/UrlContext'
 
 import WorkshopCard from '../components/WorkshopCard'
-import LoadingSpinner from '../components/ui/LoadingSpinner'
 import EnrollModal from '../components/EnrollModal'
 import ModalsContext from '../contexts/ModalsContext'
 import WorkshopsModal from '../components/WorkshopsModal'
@@ -44,8 +43,8 @@ function WorkshopsPage() {
       .then(response => {
         setWorkshops(response.data)
         setFilteredItems(response.data)
-        setIsLoading(false)
       })
+      .then(() => setIsLoading(false))
       .catch(error => {
         console.error(error)
       })
@@ -53,21 +52,23 @@ function WorkshopsPage() {
 
   function handleDataRefresh() {
     axios.get(workshopsURL)
-    .then(response => {
-      setWorkshops(response.data)
-      setFilteredItems(response.data)
-  })
-    .catch(error => {
-      console.error(error)
-    })
+      .then(response => {
+        setWorkshops(response.data)
+        setFilteredItems(response.data)
+      })
+      .then(() => setIsLoading(false))
+      .catch(error => {
+        console.error(error)
+      })
   }
 
   return (
     <MainLayout>
       {showEnrollModal && <EnrollModal setShowEnrollModal={setShowEnrollModal} clickedWorkshopId={clickedWorkshopId} />}
-      {showWorkshopsModal && <WorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} handleDataRefresh={handleDataRefresh} editDataId={clickedWorkshopId}/>}
-      <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={workshops} setFilteredItems={setFilteredItems}>
-        {isLoading ? <LoadingSpinner spin={isLoading} /> : filteredItems.map(workshop =>
+      {showWorkshopsModal && <WorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} handleDataRefresh={handleDataRefresh} editDataId={clickedWorkshopId} />}
+      <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={workshops} setFilteredItems={setFilteredItems} setIsLoading={setIsLoading} isLoading={isLoading}>
+        {
+          filteredItems.map(workshop =>
           <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} showEnrollButton={true} setShowWorkshopsModal={setShowWorkshopsModal} />
         )}
       </PageLayout>

@@ -18,6 +18,7 @@ export default {
         "bolts-sf": ["Bolts SF", "sans-serif"],
         "righteous": ["Righteous", "sans-serif"],
         "bungee": ["Bungee", "sans-serif"],
+        "mina": ["Mina", "arial"]
       }
     },
   },
