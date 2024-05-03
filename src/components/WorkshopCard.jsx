@@ -47,7 +47,6 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
         setTextColor(color)
         setIcon(icon)
     }, [])
-
     return (
         <div  className='w-5/12 h-max flex flex-col rounded-xl bg-white shadow-md overflow-hidden my-5'>
         <div className='w-full'><img className='object-cover' src={icon} /></div>

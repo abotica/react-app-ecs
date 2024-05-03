@@ -6,9 +6,9 @@ function Table({ dataArray, showDataProperties, setShowDeleteAffirmationModal, s
     const location = useLocation()
 
     const headers = {
-        '/administration/workshopsAdmin': ['IME RADIONICE', 'DATUM POČETKA', 'BROJ PRIJAVLJENIH', 'AKCIJE'],
-        '/administration/organizationsAdmin': ['IME ORGANIZACIJE', 'AKCIJE'],
-        '/administration/lecturersAdmin': ['IME PREDAVAČA', 'AKCIJE'],
+        '/administration/workshopsAdmin': ['IME RADIONICE', 'DATUM POČETKA', 'BROJ PRIJAVLJENIH', 'UPRAVLJANJE'],
+        '/administration/organizationsAdmin': ['IME ORGANIZACIJE', 'UPRAVLJANJE'],
+        '/administration/lecturersAdmin': ['IME PREDAVAČA', 'UPRAVLJANJE'],
     };
 
     return (
