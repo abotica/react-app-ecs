@@ -32,7 +32,7 @@ function Navbar() {
                     <li className={`${location.pathname === "/lecturers" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s`}>
                         <Link to={"/lecturers"}>Predavači</Link>
                     </li>
-                    <li className={`${location.pathname === "/administration" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]`}>
+                    <li className={`${location.pathname === "/administration" || location.pathname === "/administration/workshopsAdmin" || location.pathname === "/administration/organizationsAdmin" || location.pathname === "/administration/lecturersAdmin" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]`}>
                         {isAdmin && <Link to={"/administration"}>Administracija</Link>}
                     </li>
                 </ul>

@@ -25,7 +25,7 @@ useEffect(() => {
 
     return (
         <div className='flex flex-col'>
-            <div className='w-full h-10 flex justify-end items-end'>{isAdmin && <Button onClick={() => setShowModal(true)}  className='mr-16 before:bg-edit-yellow border-edit-yellow text-edit-yellow'>{location.pathname === '/workshops' ? 'Dodaj radionicu' : 'Dodaj predavača'}</Button>}</div>
+            <div className='w-full h-12 flex justify-end items-end'>{isAdmin && <Button onClick={() => setShowModal(true)}  className='mr-16 before:bg-edit-yellow border-edit-yellow text-edit-yellow'>{location.pathname === '/workshops' ? 'Dodaj radionicu' : 'Dodaj predavača'}</Button>}</div>
             <div className='flex'>
                 <div className='h-full w-3/12 pr-20 pl-5 flex flex-col relative'>
                    {location.pathname === '/workshops' && <WorkshopsFilters filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={items} setFilteredItems={setFilteredItems}/> }
