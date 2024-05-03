@@ -82,7 +82,7 @@ function WorkshopsModalForm({ isLoading, lecturers, workshop, setWorkshop, setIs
         }
     }, [])
 
-    return isLoading ? <LoadingSpinner spin={true} /> :
+    return isLoading ? <LoadingSpinner /> :
         <form className='flex flex-col h-max w-full' onSubmit={e => {
             e.preventDefault(); setIsSubmitting(true)
             if (editData) handlePut()

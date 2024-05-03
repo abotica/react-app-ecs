@@ -48,7 +48,7 @@ function OrganizationsModalForm({ isLoading, workshops, organization, setOrganiz
         }
     }, [])
 
-    return isLoading ? <LoadingSpinner spin={true} /> :
+    return isLoading ? <LoadingSpinner /> :
         <form className='flex flex-col h-max w-full' onSubmit={e => {
             e.preventDefault(); setIsSubmitting(true)
             if (editData) handlePut()

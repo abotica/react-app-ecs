@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 
 import Button from './ui/Button'
-import { set } from 'lodash'
 
 function WorkshopsFilters({ filterOptions, selectedFilters, setSelectedFilters, items, setFilteredItems}) {
 

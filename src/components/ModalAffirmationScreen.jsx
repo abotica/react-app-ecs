@@ -7,7 +7,7 @@ function ModalAffirmationScreen({error, success, isLoading}) {
 
   return (
     <div className='w-max h-max'>
-      {isLoading ? <LoadingSpinner spin={isLoading} /> : error ? <p><FontAwesomeIcon className='text-red-500' size='2xl' icon={faXmarkCircle} />{error}</p> : success ? <p><FontAwesomeIcon className='text-green-500' size='2xl' icon={faCheckCircle} />{success}</p> : null}
+      {isLoading ? <LoadingSpinner /> : error ? <p><FontAwesomeIcon className='text-red-500' size='2xl' icon={faXmarkCircle} />{error}</p> : success ? <p><FontAwesomeIcon className='text-green-500' size='2xl' icon={faCheckCircle} />{success}</p> : null}
     </div>
   )
 }

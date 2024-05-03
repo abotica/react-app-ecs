@@ -9,11 +9,12 @@ import LoadingSpinner from '../components/ui/LoadingSpinner';
 function PageLayout({ children, filterOptions, selectedFilters, setSelectedFilters, items, setFilteredItems, setIsLoading, isLoading}) {
 const location = useLocation()
 
+// mimicking loading state because filtering is very fast on small arrays
 useEffect(() => {
     setIsLoading(true)
     setTimeout(() => {
         setIsLoading(false)
-    }, 500)
+    }, 300)
 
 
 }, [selectedFilters])
@@ -24,7 +25,7 @@ useEffect(() => {
                {location.pathname === '/lecturers' && <LecturersFilters filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={items} setFilteredItems={setFilteredItems}/>}
             </div>
             <div className='h-fit w-9/12 relative flex flex-wrap p-5 justify-around'>
-                {isLoading ? <LoadingSpinner spin={true} /> : children}
+                {isLoading ? <LoadingSpinner /> : children}
             </div>
         </div>
     );
