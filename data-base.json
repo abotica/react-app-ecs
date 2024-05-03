@@ -66,6 +66,27 @@
         "name": "Mid"
       },
       "enrolled": 0
+    },
+    {
+      "id": "f7f7c398-ad9d-434c-9c48-08da9088ca7c",
+      "name": "React JuniorDev",
+      "date": "2024-06-01",
+      "lecturers": [
+        {
+          "id": "7d961756-e23e-4b25-ac29-0e9ffd8f54c5",
+          "name": "Lala Larica"
+        }
+      ],
+      "description": "Hehehehe",
+      "topic": {
+        "id": "react",
+        "name": "React"
+      },
+      "difficulty": {
+        "id": "junior",
+        "name": "Junior"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [

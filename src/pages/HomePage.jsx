@@ -12,13 +12,38 @@ import lecturer5 from '/src/assets/lecturers/lecturer5.png';
 import lecturer6 from '/src/assets/lecturers/lecturer6.png';
 import lecturer7 from '/src/assets/lecturers/lecturer7.jpg';
 
+import partner01 from '/src/assets/partners/partner01.png'
+import partner02 from '/src/assets/partners/partner02.png'
+import partner03 from '/src/assets/partners/partner03.png'
+import partner04 from '/src/assets/partners/partner04.svg'
+import partner05 from '/src/assets/partners/partner05.png'
+import partner06 from '/src/assets/partners/partner06.png'
+import partner07 from '/src/assets/partners/partner07.png'
+import partner08 from '/src/assets/partners/partner08.png'
+import partner09 from '/src/assets/partners/partner09.png'
+import partner10 from '/src/assets/partners/partner10.png'
+import partner11 from '/src/assets/partners/partner11.png'
+import partner12 from '/src/assets/partners/partner12.png'
+import partner13 from '/src/assets/partners/partner13.png'
+import partner14 from '/src/assets/partners/partner14.png'
+import partner15 from '/src/assets/partners/partner15.png'
+import partner16 from '/src/assets/partners/partner16.png'
+
+import grup1 from '/src/assets/design/group-1-1-1.svg'
+import grup2 from '/src/assets/design/group-1-2-1.svg'
+import grup3 from '/src/assets/design/group-1-3-1.svg'
+
+import divider from '/src/assets/design/c-item-divider-h.svg'
+
+import titleBackground from '/src/assets/design/zbrljana-podloga.svg'
+
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function HomePage() {
 
-  const headerStyle = { className: "text-5xl font-bold text-edit-blue text-center mb-5" } //before:content-[''] before:h-[2px] before:bg-edit-blue before:w-full before:inline-block
+  const headerStyle = { className: `text-5xl font-bold text-white text-center mb-5 bg-title-background [background-repeat:no-repeat] [background-size:cover] px-[40px] py-[20px]` } //before:content-[''] before:h-[2px] before:bg-edit-blue before:w-full before:inline-block
   const lecturerNameStyle = { className: 'text-center text-edit-blue font-mina font-bold text-2xl' }
   const lecturerSchoolStyle = { className: 'text-center font-sans font-light text-lg' }
 
@@ -32,6 +57,10 @@ function HomePage() {
     { name: 'Marijana Polić Kuko', school: 'OŠ Meje, Split', image: lecturer7 },
   ];
 
+  const parnersRowOne = [partner01, partner02, partner03, partner04, partner05, partner06]
+  const partnersRowTwo = [partner07, partner08, partner09, partner10, partner11]
+  const partnersRowThree = [partner12, partner13, partner14, partner15, partner16]
+
   useEffect(() => {
     AOS.init({
       duration: 1000
@@ -43,7 +72,10 @@ function HomePage() {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 3,
+    autoplay: true,
+    speed: 2000,
+    auotplaySpeed: 2000
   };
 
   const divStyle = {
@@ -66,8 +98,8 @@ function HomePage() {
         </div>
 
       </div>
-      <div data-aos="fade-up" className='font-sans px-20 font-extralight'>
-        <div className='mb-10 mt-28 flex flex-col items-center'>
+      <div className='font-sans px-20 font-extralight'>
+        <div data-aos="fade-up" className='mb-10 mt-28 flex flex-col items-center'>
           <h1 {...headerStyle}>O nama</h1>
           <p className='text-2xl text-center'><span className='font-bold text-edit-blue'>EDIT CodeSchool</span> je besplatna škola programiranja
             koja se održava već sedam godina u preko 30 osnovnih i srednjih škola Splitsko-dalmatinske županije u gradovima <span className='text-edit-blue font-bold'>
@@ -102,10 +134,10 @@ function HomePage() {
             </ol>
           </div>
         </div>
-        <div data-aos="fade-up" className='mb-10 flex flex-col items-center'>
-          <hr className='h-[2px] bg-edit-blue w-6/12 mb-5' />
+        <div data-aos="fade-up" className='mb-10 mt-20 flex flex-col items-center'>
+          <h1 {...headerStyle}>Radionice</h1>
           <div>
-            <h1 {...headerStyle}>Radionice</h1>
+
             <p className='text-2xl text-center mb-1'>Uz moto „Znanje dostupno svima“, u Splitsko-dalmatinskoj županiji već sedmu godinu za redom organiziramo EDIT CodeSchool - besplatnu školu primijenjenog programiranja u kojoj učenike osnovnih i srednjih škola kroz čak 6 razina podučavamo osnovama programiranja te izradi web stranica i aplikacija.</p>
 
             <p className='font-mina text-edit-blue font-bold text-2xl mt-10'>EDIT CodeSchool - osnovna škola (6. - 8. razred)</p>
@@ -120,25 +152,55 @@ function HomePage() {
 
             <p className='font-mina text-edit-blue font-bold text-2xl mt-10'>EDIT CodeSchool - osnovna škola (6. - 8. razred)</p>
             <p className='text-xl mt-1'>Za najupornije editovce tu je i <span className='text-edit-yellow font-bold'>JUNIOR Dev</span> stručna edukacija koja će tvoje znanje i vještine za karijeru programera izbrusiti do zaposlenja.</p>
+            {/* <div className='flex h-64 justify-center items-center'>
+              <div className='w-full flex items-center justify-center'>
+                <img className='object-contain h-full' src={grup1} />
+
+              </div>
+              <div className='w-32'><img className='object-contain' src={divider} /></div>
+              <div className='w-full flex items-center justify-center'>
+                <img className='object-contain' src={grup2} />
+
+              </div>
+              <div className='w-32'><img className='object-contain' src={divider} /></div>
+              <div className='w-full flex items-center justify-center'>
+                <img className='object-contain' src={grup3} />
+              </div>
+            </div> */}
 
           </div>
 
         </div>
-        <div data-aos="fade-up" className='mb-10 flex flex-col items-center'>
-          <hr className='h-[2px] bg-edit-blue w-6/12 mb-5' />
+        <div data-aos="fade-up" className='mb-10 mt-20 flex flex-col items-center'>
           <h1 {...headerStyle}>Predavači</h1>
           <p className='text-xl text-center'>Svi naši nastavnici certificirani su stručnjaci posebnog edukativnog programa - <span className='font-mina text-edit-yellow font-bold'>EDIT profesor</span> - osmišljenog za praktično, brzo i lako primjenjivo učenje osnova programiranja.</p>
           <div className='w-full mb-20'>
             <Slider {...settings}>
               {lecturers.map((lecturer, index) => (
                 <div key={index} className='w-[400px] flex flex-col'>
-                  <img className='object-cover w-full h-full' src={lecturer.image} />
+                  <img className='object-cover w-8/12 h-full' src={lecturer.image} />
                   <p {...lecturerNameStyle}>{lecturer.name}</p>
                   <p {...lecturerSchoolStyle}>{lecturer.school}</p>
                 </div>
               ))}
             </Slider>
           </div>
+        </div>
+        <div data-aos="fade-up" className='flex flex-col items-center'>
+          <h1 {...headerStyle}>Partneri</h1>
+          <div className='flex h-[163px] justify-center'>
+            {parnersRowOne.map((path, index) => <div key={index}><img className='object-cover w-full h-full' src={path} /></div>)}
+          </div>
+          <div className='flex h-[163px] justify-center'>
+            <div className='flex h-[163px] justify-center'>
+              {partnersRowTwo.map((path, index) => <div key={index}><img className='object-cover w-full h-full' src={path} /></div>)}
+            </div>
+          </div>
+          <div className='flex h-[163px] justify-center'>
+            {partnersRowThree.map((path, index) => <div key={index}><img className='object-cover w-full h-full' src={path} /></div>)}
+          </div>
+          <p className='text-xl text-center mt-5'>Od samog početka partneri u osmišljavanju i provođenju edukacija su djelatnici PMF Split, FESB Split i III. Gimnazije Split .</p>
+          <p className='text-xl text-center mt-5'>Kvalitet EDIT CodeSchool su prepoznale i partnersku podršku projektu pružaju neke od najuspješnijih splitskih i hrvatskih IT tvrtki, s kojima ćemo organizirati prigodna predavanja i posjete za naše polaznike EDIT CodeSchool.</p>
         </div>
       </div>
     </MainLayout>

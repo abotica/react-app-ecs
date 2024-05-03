@@ -48,12 +48,12 @@ function WorkshopsFilters({ filterOptions, selectedFilters, setSelectedFilters, 
       
 
   return (
-    <div>
+    <div className='sticky top-0'>
       {filterOptions.map(filterOption => (
-        <div key={filterOption.id}>
-          <p className='text-2xl font-semibold' >{filterOption.name}</p>
+        <div className='my-10' key={filterOption.id}>
+          <p className='text-2xl font-bold font-mina text-white text-center bg-title-background [background-repeat:no-repeat] [background-size:cover] px-[10px] py-[10px]' >{filterOption.name}</p>
           {filterOption.options.map(option => (
-            <div key={option}  className='flex flex-col'><Button className={`${selectedFilters.includes(option) && 'active'} [&.active]:bg-edit-blue [&.active]:text-white [&.active]:hover:text-white my-1 before:hidden hover:text-edit-blue`} onClick={() => handleFilterClick(option)}>{option}</Button></div>
+            <div key={option}  className='flex flex-col'><Button className={`${selectedFilters.includes(option) && 'active'} [&.active]:bg-edit-blue [&.active]:text-white [&.active]:hover:text-white my-1 before:hidden hover:text-edit-blue font-mina font-bold`} onClick={() => handleFilterClick(option)}>{option}</Button></div>
           ))}
         </div>
       )

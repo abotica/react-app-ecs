@@ -19,6 +19,9 @@ export default {
         "righteous": ["Righteous", "sans-serif"],
         "bungee": ["Bungee", "sans-serif"],
         "mina": ["Mina", "arial"]
+      },
+      backgroundImage: {
+        "title-background": "url('/src/assets/design/zbrljana-podloga.svg')"
       }
     },
   },
