@@ -50,7 +50,7 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
 
     return (
         <div  className='w-5/12 h-max flex flex-col rounded-xl bg-white shadow-md overflow-hidden my-5'>
-        <div className='w-full'><img className='object-cover' src={icon} alt='Wordpress' /></div>
+        <div className='w-full'><img className='object-cover' src={icon} /></div>
             <div className='h-fit w-full flex flex-col p-6 my-2'>
                 <p style={{color: textColor}} className='font-bold font-mina text-3xl text-center w-full'>{workshop.name}</p>
                 <p style={{color: textColor}} className='font-mina font-bold my-2'>TEMA</p>

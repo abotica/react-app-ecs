@@ -6,10 +6,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        "navbar-black": "#101415",
         "edit-yellow": "#DBAF52",
         "edit-blue": "#0088AF",
-        "instagram": "linear-gradient(to right,#833ab4,#fd1d1d,#fcb045)",
         "edit-red": "#D3462C"
       },
       dropShadow: {

@@ -78,7 +78,7 @@ function LecturersPage() {
       {
         showLecturerPage ? <Outlet /> :
         
-        <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={lecturers} setFilteredItems={setFilteredItems} setIsLoading={setIsLoading}>
+        <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={lecturers} setFilteredItems={setFilteredItems} setIsLoading={setIsLoading} setShowModal={setShowLecturersModal}>
           {isLoading ? <LoadingSpinner /> : filteredItems.map(lecturer =>
             <LecturerCard key={lecturer.id} lecturer={lecturer} setClickedLecturerId={setClickedLecturerId} showSeeWorkshopsButton={true} setShowLecturersModal={setShowLecturersModal} setShowLecturerPage={setShowLecturerPage}/>)
           }

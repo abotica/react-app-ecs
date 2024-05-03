@@ -66,7 +66,7 @@ function WorkshopsPage() {
     <MainLayout>
       {showEnrollModal && <EnrollModal setShowEnrollModal={setShowEnrollModal} clickedWorkshopId={clickedWorkshopId} />}
       {showWorkshopsModal && <WorkshopsModal setShowWorkshopsModal={setShowWorkshopsModal} handleDataRefresh={handleDataRefresh} editDataId={clickedWorkshopId} />}
-      <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={workshops} setFilteredItems={setFilteredItems} setIsLoading={setIsLoading} isLoading={isLoading}>
+      <PageLayout filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={workshops} setFilteredItems={setFilteredItems} setIsLoading={setIsLoading} isLoading={isLoading} setShowModal={setShowWorkshopsModal}>
         {
           filteredItems.map(workshop =>
           <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={setShowEnrollModal} setClickedWorkshopId={setClickedWorkshopId} showEnrollButton={true} setShowWorkshopsModal={setShowWorkshopsModal} />

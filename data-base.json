@@ -87,6 +87,27 @@
         "name": "Junior"
       },
       "enrolled": 0
+    },
+    {
+      "id": "46022910-b202-42c8-8c82-3ce478f586e9",
+      "name": "Test radionica",
+      "date": "2024-05-31",
+      "lecturers": [
+        {
+          "id": "06d1599c-2c33-4a25-9869-3c70d093ad99",
+          "name": "Dokky"
+        }
+      ],
+      "description": "Ovo je proba radionice koju sam napravio kako bi isprobao radionicu. Iako je radionica radionica to je samo radionica. Ta radinoica je radionica i onda ide la la la la, iako je to la la la la. Ovo je proba radionice koju sam napravio kako bi isproba.",
+      "topic": {
+        "id": "wordpress",
+        "name": "Wordpress"
+      },
+      "difficulty": {
+        "id": "mid",
+        "name": "Mid"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [
@@ -204,6 +225,25 @@
         {
           "id": "php",
           "name": "PHP"
+        }
+      ]
+    },
+    {
+      "id": "562eef28-e5de-4e02-8885-04856b654702",
+      "name": "Ita Itić",
+      "bio": "Ovo je proba radionice koju sam napravio kako bi isprobao radionicu. Iako je radionica radionica to je samo radionica. Ta radinoica je radionica i onda ide la la la la, iako je to la la la la. Ovo je proba radionice koju sam napravio kako bi isproba.",
+      "organization": {
+        "id": "557b5f3d-e5e6-42d0-8273-551b65e4cae0",
+        "name": "Emezetta"
+      },
+      "topics": [
+        {
+          "id": "php",
+          "name": "PHP"
+        },
+        {
+          "id": "wordpress",
+          "name": "Wordpress"
         }
       ]
     }
