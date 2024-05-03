@@ -9,7 +9,8 @@ export default {
         "navbar-black": "#101415",
         "edit-yellow": "#DBAF52",
         "edit-blue": "#0088AF",
-        "instagram": "linear-gradient(to right,#833ab4,#fd1d1d,#fcb045)"
+        "instagram": "linear-gradient(to right,#833ab4,#fd1d1d,#fcb045)",
+        "edit-red": "#D3462C"
       },
       dropShadow: {
         "lg-white": "0px 0px 1px rgb(255, 255, 255, 1)",

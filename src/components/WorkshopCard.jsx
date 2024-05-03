@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 
 import expressIcon from '../assets/logos/expressjs-icon.svg'
 import phpIcon from '../assets/logos/php-icon.svg'
@@ -20,16 +20,21 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
     const {setEditData} = useContext(CommonStatesContext)
     const [textColor, setTextColor] = useState('edit-blue')
     const [icon, setIcon] = useState('')
+    const className = useRef('')
 
     function selectIcon() {
         switch (workshop.topic.name) {
             case 'React':
+                className.current = 'mb-3 text-[#40CBFE] border-[#40CBFE] before:bg-[#40CBFE]'
                 return {icon: reactRectangle, color: '#40CBFE'}
             case 'PHP':
+                className.current = 'mb-3 text-[#3E4780] border-[#3E4780] before:bg-[#3E4780]'
                 return {icon: phpRectangle, color: '#3E4780'}
             case 'Express':
+                className.current = 'mb-3 text-[#1A1A1A] border-[#1A1A1A] before:bg-[#1A1A1A]'
                 return {icon: expressRectangle, color: '#1A1A1A'}
             case 'Wordpress':
+                className.current = 'mb-3 text-[#0C6087] border-[#0C6087] before:bg-[#0C6087]'
                 return {icon: wordpressRectangle, color: '#0C6087'}
             default:
                 return null
@@ -60,7 +65,7 @@ function WorkshopCard({ workshop, setShowEnrollModal, setClickedWorkshopId, show
                 <p className='font-thin'>{workshop.lecturers.map(lecturer => lecturer.name).join(', ')}</p>
             </div>
             <div className='flex justify-center mt-2 h-fit'>
-                {showEnrollButton && <Button colorParam={textColor}  className='mb-3' onClick={() => {setShowEnrollModal(true); setClickedWorkshopId(workshop.id)}}>Prijavi se</Button>}
+                {showEnrollButton && <Button  className={className.current} onClick={() => {setShowEnrollModal(true); setClickedWorkshopId(workshop.id)}}>Prijavi se</Button>}
                 {isAdmin && <Button className='ml-1 mb-3 text-edit-yellow border-edit-yellow before:bg-edit-yellow' onClick={() => {setShowWorkshopsModal(true); setClickedWorkshopId(workshop.id); setEditData(true)}}>Uredi</Button>}
             </div>
         </div>

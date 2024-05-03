@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import Button from './ui/Button'
@@ -11,6 +11,7 @@ import CommonStatesContext from '../contexts/CommonStatesContext'
 
 function AdminNavbar() {
     const location = useLocation()
+    const [selectedItem, setSelectedItem] = useState('');
     const { showWorkshopsModal, setShowWorkshopsModal, showOrganizationsModal, setShowOrganizationsModal, showLecturersModal, setShowLecturersModal } = useContext(ModalsContext)
     const { setEditData } = useContext(CommonStatesContext)
 
@@ -33,21 +34,21 @@ function AdminNavbar() {
             <div className='grid grid-rows-1 grid-cols-3'>
                 <div className='row-start-1 row-end-2 col-start-2 col-end-3 self-center'>
                     <ul className='flex justify-around' >
-                        <li className='px-3 font-semibold text-xl'>
-                            <Link to={"workshopsAdmin"}>Radionice</Link>
+                        <li className={`font-bold text-white font-mina text-xl bg-title-background [background-repeat:no-repeat] [background-size:cover] px-[10px] py-[10px] ${selectedItem === 'workshopsAdmin' ? 'scale-125' : ''} transition-transform ease-in-out`}>
+                            <Link onClick={() => setSelectedItem('workshopsAdmin')} to={"workshopsAdmin"}>Radionice</Link>
                         </li>
-                        <li className='px-3 font-semibold text-xl'>
-                            <Link to={"organizationsAdmin"}>Organizacije</Link>
+                        <li className={`font-bold text-white font-mina text-xl bg-title-background [background-repeat:no-repeat] [background-size:cover] px-[10px] py-[10px] ${selectedItem === 'organizationsAdmin' ? 'scale-125' : ''} transition-transform ease-in-out`}>
+                            <Link onClick={() => setSelectedItem('organizationsAdmin')} to={"organizationsAdmin"}>Organizacije</Link>
                         </li>
-                        <li className='px-3 font-semibold text-xl'>
-                            <Link to={"lecturersAdmin"}>Predavači</Link>
+                        <li className={`font-bold text-white font-mina text-xl bg-title-background [background-repeat:no-repeat] [background-size:cover] px-[10px] py-[10px] ${selectedItem === 'lecturersAdmin' ? 'scale-125' : ''} transition-transform ease-in-out`}>
+                            <Link onClick={() => setSelectedItem('lecturersAdmin')} to={"lecturersAdmin"}>Predavači</Link>
                         </li>
                     </ul>
                 </div>
-                {location.pathname !== '/administration' && <Button className='mr-2 row-start-1 row-end-2 col-start-3 col-end-4 w-6/12 justify-self-center self-center' onClick={() => { setEditData(false); handleOnClick() }}><FontAwesomeIcon icon={faPlus} />
-                {location.pathname === '/administration/workshopsAdmin' && 'Dodaj radionicu'}
-                {location.pathname === '/administration/organizationsAdmin' && 'Dodaj organizaciju'}
-                {location.pathname === '/administration/lecturersAdmin' && 'Dodaj predavača'}
+                {location.pathname !== '/administration' && <Button className='mr-2 row-start-1 row-end-2 col-start-3 col-end-4 w-max px-2 justify-self-center self-center before:bg-edit-yellow border-edit-yellow text-edit-yellow' onClick={() => { setEditData(false); handleOnClick() }}><FontAwesomeIcon icon={faPlus} />
+                    {location.pathname === '/administration/workshopsAdmin' && 'Dodaj radionicu'}
+                    {location.pathname === '/administration/organizationsAdmin' && 'Dodaj organizaciju'}
+                    {location.pathname === '/administration/lecturersAdmin' && 'Dodaj predavača'}
                 </Button>}
             </div>
         </nav>

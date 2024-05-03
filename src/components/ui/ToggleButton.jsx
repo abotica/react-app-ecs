@@ -29,7 +29,7 @@ function ToggleButton() {
                 </span>
             </label>
             <span className='label flex items-center text-sm font-medium text-white '>
-                    <span className='pr-2 pl-2'> {isAdmin ? 'Admin' : 'User'} </span>
+                    <span className='pr-2 pl-2'> {isAdmin ? 'ADMIN' : 'USER'} </span>
             </span>
         </>
     )

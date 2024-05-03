@@ -4,7 +4,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsLinkedin, BsTwitter, B
 
 function Footer() {
     return (
-        <CustomFooter container className='bg-edit-blue mt-auto'>
+        <CustomFooter container className='bg-edit-blue mt-auto font-mina'>
             <div className="w-full">
                 <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 mb-2">
                     <div>

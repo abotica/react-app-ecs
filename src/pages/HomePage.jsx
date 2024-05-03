@@ -46,6 +46,7 @@ function HomePage() {
   const headerStyle = { className: `text-5xl font-bold text-white text-center mb-5 bg-title-background [background-repeat:no-repeat] [background-size:cover] px-[40px] py-[20px]` } //before:content-[''] before:h-[2px] before:bg-edit-blue before:w-full before:inline-block
   const lecturerNameStyle = { className: 'text-center text-edit-blue font-mina font-bold text-2xl' }
   const lecturerSchoolStyle = { className: 'text-center font-sans font-light text-lg' }
+  const blueWordStyle = { className: 'text-edit-blue font-bold text-2xl'}
 
   const lecturers = [
     { name: 'Andrijana Skelić', school: 'SŠ Braća Radić, Kaštela', image: lecturer1 },
@@ -61,10 +62,16 @@ function HomePage() {
   const partnersRowTwo = [partner07, partner08, partner09, partner10, partner11]
   const partnersRowThree = [partner12, partner13, partner14, partner15, partner16]
 
+  // refresh AOS after render
+  setTimeout(() => {
+    AOS.refresh()
+  }, 500)
+
   useEffect(() => {
     AOS.init({
       duration: 1000
     })
+    
   }, [])
 
   const settings = {
@@ -98,14 +105,14 @@ function HomePage() {
         </div>
 
       </div>
-      <div className='font-sans px-20 font-extralight'>
-        <div data-aos="fade-up" className='mb-10 mt-28 flex flex-col items-center'>
+      <div className='font-sans px-44 font-extralight'>
+        <div data-aos="fade-up"  className='mb-10 mt-28 flex flex-col items-center'>
           <h1 {...headerStyle}>O nama</h1>
-          <p className='text-2xl text-center'><span className='font-bold text-edit-blue'>EDIT CodeSchool</span> je besplatna škola programiranja
-            koja se održava već sedam godina u preko 30 osnovnih i srednjih škola Splitsko-dalmatinske županije u gradovima <span className='text-edit-blue font-bold'>
-              Split, Solin, Kaštela, Omiš, Trogir, Imotski, Sinj, Makarska, Supetar</span> i naseljima <span className='text-edit-blue font-bold'>Šestanovac i Grohote</span>.</p>
+          <p className='text-2xl text-center'><span {...blueWordStyle}>EDIT CodeSchool</span> je besplatna škola programiranja
+            koja se održava već sedam godina u preko 30 osnovnih i srednjih škola Splitsko-dalmatinske županije u gradovima <span {...blueWordStyle}>
+              Split, Solin, Kaštela, Omiš, Trogir, Imotski, Sinj, Makarska, Supetar</span> i naseljima <span {...blueWordStyle}>Šestanovac i Grohote</span>.</p>
 
-          <p className='text-2xl text-center my-10'>Ove godine u <span className='font-bold text-edit-blue'>Edit CodeSchool</span> sudjeluju sljedeće škole:</p>
+          <p className='text-2xl text-center my-10'>Ove godine u <span {...blueWordStyle}>Edit CodeSchool</span> sudjeluju sljedeće škole:</p>
           <div className='flex justify-around items-start w-full'>
             <ol data-aos="fade-right" className='list-decimal text-lg'>
               <p className='text-2xl text-edit-blue font-bold text-center mb-5'>OSNOVNE ŠKOLE:</p>
@@ -138,20 +145,20 @@ function HomePage() {
           <h1 {...headerStyle}>Radionice</h1>
           <div>
 
-            <p className='text-2xl text-center mb-1'>Uz moto „Znanje dostupno svima“, u Splitsko-dalmatinskoj županiji već sedmu godinu za redom organiziramo EDIT CodeSchool - besplatnu školu primijenjenog programiranja u kojoj učenike osnovnih i srednjih škola kroz čak 6 razina podučavamo osnovama programiranja te izradi web stranica i aplikacija.</p>
+            <p className='text-2xl text-center mb-10'>Uz moto <span {...blueWordStyle}>„Znanje dostupno svima“</span>, u Splitsko-dalmatinskoj županiji već sedmu godinu za redom organiziramo <span {...blueWordStyle}>EDIT CodeSchool</span> - besplatnu školu primijenjenog programiranja u kojoj učenike osnovnih i srednjih škola kroz čak 6 razina podučavamo osnovama programiranja te izradi web stranica i aplikacija.</p>
 
-            <p className='font-mina text-edit-blue font-bold text-2xl mt-10'>EDIT CodeSchool - osnovna škola (6. - 8. razred)</p>
-            <p className='text-xl mt-1'><span className='text-edit-yellow font-bold'>CyberSecurity tečaj</span> - nauči kako prepoznati i izbjeći potencijalne cyber prijetnje, kako se sigurno ponašati na Internetu i zaštititi svoju privatnost.</p>
+            <p className={blueWordStyle.className + ' mt-10'}>EDIT CodeSchool - osnovna škola (6. - 8. razred)</p>
+            <p className='text-xl mt-1 mb-2'><span className='text-edit-yellow font-bold mb-2'>CyberSecurity tečaj</span> - nauči kako prepoznati i izbjeći potencijalne cyber prijetnje, kako se sigurno ponašati na Internetu i zaštititi svoju privatnost.</p>
 
-            <p className='font-mina text-edit-blue font-bold text-2xl mt-10'>EDIT CodeSchool - srednja škola (svi razredi)</p>
-            <p className='text-xl mt-1'><span className='text-edit-yellow font-bold'>Osnovni tečaj</span> - nauči samostalno izraditi moderne web stranice upoznajući razvojna sučelja koristeći odličan Tailwind CSS i AI alate.</p>
-            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold'>RIWA razvoj sustava temeljenih na umjetnoj inteligenciji</span> - upoznaj svijet strojnog učenja, razumi što su neuronske mreže i otkrij kako algoritmi funkcioniraju. Od computer vision do sentiment analysis, svaki korak će te približiti praktičnom razumijevanju kako umjetna inteligencija funkcionira.</p>
-            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold'>Osnovni JS tečaj</span> - ako si završio osnovni tečaj a nemaš dovoljno predznanja za sljedeći korak, tu je Osnovni JS tečaj u trajanju od 3 tjedna! Svladaj osnove JavaScript-a koje su ti potrebne za automatski upis u Srednji JS tečaj.</p>
-            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold'>Srednji JS tečaj</span> - produbi znanje programiranja kroz više konkretnih primjera i zadataka, nauči prepoznati glavne izazove razvoja web aplikacija  te osmisli i realiziraj vlastitu aplikaciju u kontekstu poučavanja pojedinih pojmova iz programiranja progresivnih aplikacija.</p>
-            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold'>Napredni JS tečaj</span> - nauči razvijati moderne web stranice koristeći programski jezik JavaScript te svladaj vezane tehnologije potrebne za izradu zahtjevnih web aplikacija koje koriste bazu podataka (Firebase).</p>
+            <p className={blueWordStyle.className + ' mt-10'}>EDIT CodeSchool - srednja škola (svi razredi)</p>
+            <p className='text-xl mt-1 mb-2'><span className='text-edit-yellow font-bold mb-2'>Osnovni tečaj</span> - nauči samostalno izraditi moderne web stranice upoznajući razvojna sučelja koristeći odličan Tailwind CSS i AI alate.</p>
+            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold mb-2'>RIWA razvoj sustava temeljenih na umjetnoj inteligenciji</span> - upoznaj svijet strojnog učenja, razumi što su neuronske mreže i otkrij kako algoritmi funkcioniraju. Od computer vision do sentiment analysis, svaki korak će te približiti praktičnom razumijevanju kako umjetna inteligencija funkcionira.</p>
+            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold mb-2'>Osnovni JS tečaj</span> - ako si završio osnovni tečaj a nemaš dovoljno predznanja za sljedeći korak, tu je Osnovni JS tečaj u trajanju od 3 tjedna! Svladaj osnove JavaScript-a koje su ti potrebne za automatski upis u Srednji JS tečaj.</p>
+            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold mb-2'>Srednji JS tečaj</span> - produbi znanje programiranja kroz više konkretnih primjera i zadataka, nauči prepoznati glavne izazove razvoja web aplikacija  te osmisli i realiziraj vlastitu aplikaciju u kontekstu poučavanja pojedinih pojmova iz programiranja progresivnih aplikacija.</p>
+            <p className='text-xl mt-5'><span className='text-edit-yellow font-bold mb-2'>Napredni JS tečaj</span> - nauči razvijati moderne web stranice koristeći programski jezik JavaScript te svladaj vezane tehnologije potrebne za izradu zahtjevnih web aplikacija koje koriste bazu podataka (Firebase).</p>
 
-            <p className='font-mina text-edit-blue font-bold text-2xl mt-10'>EDIT CodeSchool - osnovna škola (6. - 8. razred)</p>
-            <p className='text-xl mt-1'>Za najupornije editovce tu je i <span className='text-edit-yellow font-bold'>JUNIOR Dev</span> stručna edukacija koja će tvoje znanje i vještine za karijeru programera izbrusiti do zaposlenja.</p>
+            <p className={blueWordStyle.className + ' mt-10'}>EDIT CodeSchool - osnovna škola (6. - 8. razred)</p>
+            <p className='text-xl mt-1 mb-2'>Za najupornije editovce tu je i <span className='text-edit-yellow font-bold mb-2'>JUNIOR Dev</span> stručna edukacija koja će tvoje znanje i vještine za karijeru programera izbrusiti do zaposlenja.</p>
             {/* <div className='flex h-64 justify-center items-center'>
               <div className='w-full flex items-center justify-center'>
                 <img className='object-contain h-full' src={grup1} />
@@ -173,7 +180,7 @@ function HomePage() {
         </div>
         <div data-aos="fade-up" className='mb-10 mt-20 flex flex-col items-center'>
           <h1 {...headerStyle}>Predavači</h1>
-          <p className='text-xl text-center'>Svi naši nastavnici certificirani su stručnjaci posebnog edukativnog programa - <span className='font-mina text-edit-yellow font-bold'>EDIT profesor</span> - osmišljenog za praktično, brzo i lako primjenjivo učenje osnova programiranja.</p>
+          <p className='text-2xl text-center mb-1'>Svi naši nastavnici certificirani su stručnjaci posebnog edukativnog programa - <span className='font-mina text-edit-blue font-bold'>EDIT profesor</span> - osmišljenog za praktično, brzo i lako primjenjivo učenje osnova programiranja.</p>
           <div className='w-full mb-20'>
             <Slider {...settings}>
               {lecturers.map((lecturer, index) => (
@@ -199,8 +206,8 @@ function HomePage() {
           <div className='flex h-[163px] justify-center'>
             {partnersRowThree.map((path, index) => <div key={index}><img className='object-cover w-full h-full' src={path} /></div>)}
           </div>
-          <p className='text-xl text-center mt-5'>Od samog početka partneri u osmišljavanju i provođenju edukacija su djelatnici PMF Split, FESB Split i III. Gimnazije Split .</p>
-          <p className='text-xl text-center mt-5'>Kvalitet EDIT CodeSchool su prepoznale i partnersku podršku projektu pružaju neke od najuspješnijih splitskih i hrvatskih IT tvrtki, s kojima ćemo organizirati prigodna predavanja i posjete za naše polaznike EDIT CodeSchool.</p>
+          <p className='text-2xl text-center mb-5'>Od samog početka partneri u osmišljavanju i provođenju edukacija su djelatnici <span className='font-mina font-bold text-edit-blue'>PMF Split, FESB Split i III. gimnazije Split</span>.</p>
+          <p className='text-2xl text-center mb-1'>Kvalitet <span className='font-mina font-bold text-edit-blue'>EDIT CodeSchool</span> su prepoznale i partnersku podršku projektu pružaju neke od najuspješnijih splitskih i hrvatskih IT tvrtki, s kojima ćemo organizirati prigodna predavanja i posjete za naše polaznike EDIT CodeSchool.</p>
         </div>
       </div>
     </MainLayout>

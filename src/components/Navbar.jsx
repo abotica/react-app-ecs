@@ -21,7 +21,7 @@ function Navbar() {
                 </Link>
             </div>
 
-            <div className='flex justify-end items-center'>
+            <div className='flex justify-end items-center font-mina'>
                 <ul className='flex items-center text-white'>
                     <li className={`${location.pathname === "/" ? "before:w-full" : ""} mx-3 before:content-[''] before:w-0 before:h-[1px] relative before:absolute before:left-0 before:bottom-0 before:bg-white before:[transition:all_ease_0.3s] hover:before:w-full hover:before:[transition:all_ease_0.3s]`}>
                         <Link to={"/"}>Naslovnica</Link>

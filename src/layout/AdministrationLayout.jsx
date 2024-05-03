@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import AdminNavbar from '../components/AdminNavbar'
 
 function AdministrationLayout({children}) {

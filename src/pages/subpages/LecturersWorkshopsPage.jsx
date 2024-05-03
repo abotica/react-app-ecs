@@ -40,13 +40,15 @@ function LecturersWorkshopsPage() {
   }, [])
 
   return (
-    <div className='flex flex-col h-full justify-center items-center relative'>
-      <div className='flex w-full mt-2 h-max absolute top-0 left-0'><Button onClick={() => { navigate(-1); setClickedLecturerId(''); setShowLecturerPage(false) }} className='ml-2'>Natrag na sve predavače</Button></div>
+    <div className='flex h-max items-start relative'>
+      <div className='flex flex-col w-2/12 pt-5 h-max top-0 left-0 sticky'><Button onClick={() => { navigate(-1); setClickedLecturerId(''); setShowLecturerPage(false) }} className='ml-2 w-max'>Natrag na sve predavače</Button></div>
 
-      { !isLoadingLecturers && <LecturerCard lecturer={lecturer} setClickedLecturerId={clickedLecturerId} showSeeWorkshopsButton={false} />}
-      <div className='flex flex-wrap justify-evenly items-center w-full h-max'>
-        {!isLoadingWorkshops && lecturersWorkshops.map(workshop =>
-            <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={false} setClickedWorkshopId={''} showEnrollButton={false}/>)}
+      <div className='flex flex-col items-center w-10/12'>
+        { !isLoadingLecturers && <LecturerCard lecturer={lecturer} setClickedLecturerId={clickedLecturerId} showSeeWorkshopsButton={false} />}
+        <div className='flex flex-wrap justify-evenly items-center w-full h-max'>
+          {!isLoadingWorkshops && lecturersWorkshops.map(workshop =>
+              <WorkshopCard key={workshop.id} workshop={workshop} setShowEnrollModal={false} setClickedWorkshopId={''} showEnrollButton={false}/>)}
+        </div>
       </div>
     </div>
 
