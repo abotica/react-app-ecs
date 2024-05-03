@@ -88,7 +88,7 @@ function WorkshopsModalForm({ isLoading, lecturers, workshop, setWorkshop, setIs
             if (editData) handlePut()
             else handlePost()
         }}>
-            {editData ? <h2>Uredi podatke o radionici</h2> : <h2 className='text-2xl font-bold text-center'>Dodaj radionicu</h2>}
+            {editData ? <h2 className='font-mina font-bold text-center text-2xl text-edit-blue'>Uredi podatke o radionici</h2> : <h2 className='font-mina font-bold text-center text-2xl text-edit-blue'>Dodaj radionicu</h2>}
             <Input type='text' name='name' value={workshop.name} handleOnChange={handleOnChange} placeholder='Naziv radionice' />
             <Input type='date' name='date' value={workshop.date} handleOnChange={handleOnChange} placeholder='Datum održavanja' />
             <Select className='my-4' defaultValue={difficultyOptions.filter(diff => diff.value === workshop.difficulty.id)} value={workshop.difficulty.value} onChange={selectedOption => handleOnChangeSelectDifficulty(selectedOption)} options={difficultyOptions} placeholder='Težina radionice' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />

@@ -70,7 +70,7 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
             if (editData) handlePut()
             else handlePost()
         }}>
-            {editData ? <h2>Uredi podatke o predavaču</h2> : <h2>Dodaj predavača</h2>}
+            {editData ? <h2 className='font-mina font-bold text-center text-2xl text-edit-blue'>Uredi podatke o predavaču</h2> : <h2 className='font-mina font-bold text-center text-2xl text-edit-blue'>Dodaj predavača</h2>}
             <Input type='text' name='name' value={lecturer.name} handleOnChange={handleOnChange} placeholder='Ime i prezime predavača' />
             <Select className='my-4' defaultValue={organizationsOptions.filter(org => org.value === lecturer.organization.id)} value={lecturer.organization.value} onChange={selectedOption => handleOnChangeSelectOrganization(selectedOption)} options={organizationsOptions} placeholder='Odaberite organizaciju predavača' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
             <Select className='my-4' isMulti defaultValue={topicsOptions.filter(topic => lecturer.topics.find(obj => obj.id === topic.value))} value={lecturer.topics.name} onChange={selectedOptions => handleOnChangeSelectTopics(selectedOptions)} options={topicsOptions} placeholder='Odaberite teme koje predavač predaje' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
