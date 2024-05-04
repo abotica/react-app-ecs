@@ -11,6 +11,7 @@ function Table({ dataArray, showDataProperties, setShowDeleteAffirmationModal, s
         '/administration/lecturersAdmin': ['IME PREDAVAČA', 'UPRAVLJANJE'],
     };
 
+    
     return (
         <table className='w-full h-full text-center'>
             <thead>
@@ -20,6 +21,7 @@ function Table({ dataArray, showDataProperties, setShowDeleteAffirmationModal, s
             </thead>
             <tbody>
                 {dataArray.map(data => <TableRow key={data.id} rowData={data} showDataProperties={showDataProperties} setShowDeleteAffirmationModal={setShowDeleteAffirmationModal} setDeleteData={setDeleteData} setShowModal={setShowModal} />)}
+                {dataArray.length === 0 && <tr><td colSpan={headers[location.pathname].length} className='font-mina font-bold text-edit-blue py-10 text-2xl'>Trenutno nema podataka</td></tr>}
             </tbody>
         </table>
     )

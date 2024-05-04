@@ -7,6 +7,7 @@ import Button from './ui/Button'
 function TableRow({ rowData, showDataProperties, setShowDeleteAffirmationModal, setDeleteData, setShowModal}) {
   
   const {setEditData} = useContext(CommonStatesContext)
+  
 
   return (
     <tr className='border-b-2 font-mina'>
