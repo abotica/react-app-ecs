@@ -1,5 +1,55 @@
 {
-  "radionice": [],
-  "predavaci": [],
-  "organizacije": []
+  "radionice": [
+    {
+      "id": "67a92358-0a60-48b8-afe7-a90e4207343b",
+      "name": "Test radionica",
+      "date": "2024-05-22",
+      "lecturers": [
+        {
+          "id": "9538d6c6-683c-4046-8ce3-72b914bec336",
+          "name": "Andrija Botica"
+        }
+      ],
+      "description": "Ovo je opis radionice.",
+      "topic": {
+        "id": "react",
+        "name": "React"
+      },
+      "difficulty": {
+        "id": "mid",
+        "name": "Mid"
+      },
+      "enrolled": 1
+    }
+  ],
+  "predavaci": [
+    {
+      "id": "9538d6c6-683c-4046-8ce3-72b914bec336",
+      "name": "Andrija Botica",
+      "bio": "Ovo je opis",
+      "organization": {
+        "id": "none",
+        "name": "Nema organizacije"
+      },
+      "topics": [
+        {
+          "id": "react",
+          "name": "React"
+        }
+      ]
+    }
+  ],
+  "organizacije": [
+    {
+      "id": "ae8b7394-2e7e-4904-b131-15213ec385f6",
+      "name": "Testna organizacija",
+      "workshops": [
+        {
+          "id": "67a92358-0a60-48b8-afe7-a90e4207343b",
+          "name": "Test radionica"
+        }
+      ],
+      "description": ""
+    }
+  ]
 }

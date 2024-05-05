@@ -9,6 +9,8 @@ import LoadingSpinner from '../components/ui/LoadingSpinner';
 import Button from '../components/ui/Button';
 
 import AdminContext from '../contexts/AdminContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 function PageLayout({ children, filterOptions, selectedFilters, setSelectedFilters, items, setFilteredItems, setIsLoading, isLoading, setShowModal}) {
@@ -25,7 +27,7 @@ useEffect(() => {
 
     return (
         <div className='flex flex-col'>
-            <div className='w-full h-12 flex justify-end items-end'>{isAdmin && <Button onClick={() => setShowModal(true)}  className='mr-16 before:bg-edit-yellow border-edit-yellow text-edit-yellow'>{location.pathname === '/workshops' ? 'Dodaj radionicu' : 'Dodaj predavača'}</Button>}</div>
+            <div className='w-full h-12 flex justify-end items-end'>{isAdmin && <Button onClick={() => setShowModal(true)}  className='mr-16 before:bg-edit-yellow border-edit-yellow text-edit-yellow'><FontAwesomeIcon icon={faPlus} />{location.pathname === '/workshops' ? 'Dodaj radionicu' : 'Dodaj predavača'}</Button>}</div>
             <div className='flex'>
                 <div className='h-full w-3/12 pr-20 pl-5 flex flex-col relative'>
                    {location.pathname === '/workshops' && <WorkshopsFilters filterOptions={filterOptions} selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} items={items} setFilteredItems={setFilteredItems}/> }
