@@ -193,20 +193,20 @@ function HomePage() {
             <img className='h-8 px-10' src={divider} />
             <div className='flex flex-col text-xl items-center justify-center'><img className='h-60' src={group2} /><p className='text-center mb-2'>Nastava se održava subotom ili u dogovoru s EDIT profesorom neki drugi dan u tjednu u trajanju od 2 sata tjedno, a sadrži predavanja, vježbe te izradu moderne web aplikacije pod mentorstvom EDIT profesora.</p></div>
             <img className='h-8 px-10' src={divider} />
-            <div className='flex flex-col text-xl items-center justify-center'><img className='h-60' src={group3} /><p className='text-center mb-2'>Učenje iz modernih materijala sa zadacima u elektroničkom obliku dostupnim na vlastitoj EDIT <a className='font-mina font-bold text-edit-blue' href="https://edit.dalmacija.hr/">edukativnoj platformi</a>.</p><p className='text-center'>Svi učenici rade praktičan završni rad i mogu osvojiti prigodne nagrade na kraju!</p></div>
+            <div className='flex flex-col text-xl items-center justify-center'><img className='h-60' src={group3} /><p className='text-center mb-2'>Učenje iz modernih materijala sa zadacima u elektroničkom obliku dostupnim na vlastitoj EDIT <a className='font-mina font-bold text-edit-blue underline' target="_blank" href="https://edit.dalmacija.hr/">edukativnoj platformi</a>.</p><p className='text-center'>Svi učenici rade praktičan završni rad i mogu osvojiti prigodne nagrade na kraju!</p></div>
           </div>
           <p  className='text-2xl text-center mt-10 mb-20'>Koji su minimalni tehnički uvjeti za pohađanje <span className='font-mina text-edit-blue font-bold'>EDIT CodeSchoola</span>?</p>
           <div data-aos="fade-up" className='w-full h-max flex justify-between items-center mb-20'>
             <div className='flex flex-col items-center h-[200px]'>
-                <p className='text-2xl text-edit-blue font-mina font-bold'>PC/Laptop</p>
+                <p className='text-2xl text-edit-blue font-mina font-bold mb-5'>PC/Laptop</p>
                 <img className='h-full' src={laptop} alt='laptop' />
             </div>
             <div className='flex flex-col items-center h-[200px]'>
-                <p className='text-2xl text-edit-blue font-mina font-bold'>Noviji operacijski sustav</p>
+                <p className='text-2xl text-edit-blue font-mina font-bold mb-5'>Noviji operacijski sustav</p>
                 <div className='flex h-full'><img className='h-full' src={linux} alt='laptop' /><img className='h-full' src={windows} alt='laptop' /><img className='h-full' src={apple} alt='laptop' /></div>
             </div>
             <div className='flex flex-col items-center h-[200px]'>
-                <p className='text-2xl text-edit-blue font-mina font-bold'>Kvalitetna Internet veza</p>
+                <p className='text-2xl text-edit-blue font-mina font-bold mb-5'>Kvalitetna Internet veza</p>
                 <img className='h-full' src={wifi} alt='laptop' />
             </div>
           </div>

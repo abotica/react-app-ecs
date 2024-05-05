@@ -2,7 +2,7 @@
   "radionice": [
     {
       "id": "67a92358-0a60-48b8-afe7-a90e4207343b",
-      "name": "Test radionica",
+      "name": "JuniorDev React",
       "date": "2024-05-22",
       "lecturers": [
         {
@@ -10,62 +10,187 @@
           "name": "Andrija Botica"
         }
       ],
-      "description": "Ovo je opis radionice.",
+      "description": "JUNIOR Dev stručna edukacija primijenjenog programiranja - i ove godine zbog velikog interesa održati će se React tečaj od uvoda do postavljanja projekata na GitHUB.\n\nPoznaješ osnove programiranja, a student si, nezaposlen, freelancer.",
       "topic": {
         "id": "react",
         "name": "React"
       },
       "difficulty": {
+        "id": "junior",
+        "name": "Junior"
+      },
+      "enrolled": 2
+    },
+    {
+      "id": "57db2872-8713-4d79-8855-f5e2522b9606",
+      "name": "Wordpress SeniorDev",
+      "date": "2024-05-25",
+      "lecturers": [
+        {
+          "id": "8a0b371a-8557-4159-b125-e148308c8b91",
+          "name": "Iva Ivić"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed purus condimentum, ornare leo a, vestibulum neque. In ac est lobortis, ultricies urna commodo, feugiat augue. Ut venenatis diam vitae mi porttitor, eget ultricies mauris pulvinar.",
+      "topic": {
+        "id": "wordpress",
+        "name": "Wordpress"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 0
+    },
+    {
+      "id": "fc4981cf-eef2-41ee-89bc-d6b49d6fac6b",
+      "name": "PHP MidDev",
+      "date": "2024-06-09",
+      "lecturers": [
+        {
+          "id": "8a0b371a-8557-4159-b125-e148308c8b91",
+          "name": "Iva Ivić"
+        },
+        {
+          "id": "70998ef2-526c-46a9-8063-61a6bee10a46",
+          "name": "Marko Marković"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neque est, pharetra vitae sem et, rutrum interdum nulla. Aliquam sagittis eleifend mauris et consectetur. Vivamus in enim hendrerit, dapibus augue et, sodales nunc. Sed quis.",
+      "topic": {
+        "id": "php",
+        "name": "PHP"
+      },
+      "difficulty": {
         "id": "mid",
         "name": "Mid"
       },
-      "enrolled": 1
+      "enrolled": 0
+    },
+    {
+      "id": "8b78d425-7e02-4126-b498-eba0b1ed20ba",
+      "name": "Express SeniorDev",
+      "date": "2024-06-08",
+      "lecturers": [
+        {
+          "id": "d0382f80-6bca-4513-9c11-83f7253864cc",
+          "name": "Maristela Maristelić"
+        },
+        {
+          "id": "8a0b371a-8557-4159-b125-e148308c8b91",
+          "name": "Iva Ivić"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neque est, pharetra vitae sem et, rutrum interdum nulla. Aliquam sagittis eleifend mauris et consectetur.",
+      "topic": {
+        "id": "express",
+        "name": "Express"
+      },
+      "difficulty": {
+        "id": "senior",
+        "name": "Senior"
+      },
+      "enrolled": 0
     }
   ],
   "predavaci": [
     {
       "id": "9538d6c6-683c-4046-8ce3-72b914bec336",
       "name": "Andrija Botica",
-      "bio": "Ovo je opis",
+      "bio": "Andrija je rođen 2003. godine. Trenutno završava 3. godinu sveučilišnog prijediplomskog studija računarstva na FESB-u. On voli React.",
       "organization": {
-        "id": "none",
-        "name": "Nema organizacije"
+        "id": "ae8b7394-2e7e-4904-b131-15213ec385f6",
+        "name": "Pevex"
       },
       "topics": [
         {
           "id": "react",
           "name": "React"
         }
-      ]
+      ],
+      "gender": "male"
     },
     {
-      "id": "2490e1cb-260a-4fad-92f1-e364991eb404",
-      "name": "Test",
+      "id": "8a0b371a-8557-4159-b125-e148308c8b91",
+      "name": "Iva Ivić",
       "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed purus condimentum, ornare leo a, vestibulum neque. In ac est lobortis, ultricies urna commodo, feugiat augue. Ut venenatis diam vitae mi porttitor, eget ultricies mauris pulvinar.",
       "organization": {
-        "id": "ae8b7394-2e7e-4904-b131-15213ec385f6",
-        "name": "Testna organizacija"
+        "id": "b9236153-c901-45f1-a988-a8265096a010",
+        "name": "Locastic"
       },
       "topics": [
+        {
+          "id": "php",
+          "name": "PHP"
+        },
+        {
+          "id": "express",
+          "name": "Express"
+        },
+        {
+          "id": "react",
+          "name": "React"
+        },
         {
           "id": "wordpress",
           "name": "Wordpress"
         }
       ],
+      "gender": "female"
+    },
+    {
+      "id": "70998ef2-526c-46a9-8063-61a6bee10a46",
+      "name": "Marko Marković",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neque est, pharetra vitae sem et, rutrum interdum nulla. Aliquam sagittis eleifend mauris et consectetur. Vivamus in enim hendrerit, dapibus augue et, sodales nunc.",
+      "organization": {
+        "id": "40d6b072-cbe4-4a27-8615-4b6f6ada07f7",
+        "name": "Digitalna Dalmacija"
+      },
+      "topics": [
+        {
+          "id": "php",
+          "name": "PHP"
+        }
+      ],
       "gender": "male"
+    },
+    {
+      "id": "d0382f80-6bca-4513-9c11-83f7253864cc",
+      "name": "Maristela Maristelić",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neque est, pharetra vitae sem et, rutrum interdum nulla. Aliquam sagittis eleifend mauris et consectetur. Vivamus in enim hendrerit, dapibus augue et, sodales nunc. ",
+      "organization": {
+        "id": "fceca0d2-48a7-499d-bd2d-16f43628c4d3",
+        "name": "Lorem Ipsum"
+      },
+      "topics": [
+        {
+          "id": "express",
+          "name": "Express"
+        }
+      ],
+      "gender": "female"
     }
   ],
   "organizacije": [
     {
       "id": "ae8b7394-2e7e-4904-b131-15213ec385f6",
-      "name": "Testna organizacija",
-      "workshops": [
-        {
-          "id": "67a92358-0a60-48b8-afe7-a90e4207343b",
-          "name": "Test radionica"
-        }
-      ],
-      "description": ""
+      "name": "Pevex",
+      "description": "PEVEX d.d., prvi hrvatski trgovački lanac na tržištu je 34 godine. Kada je riječ o trgovini neprehrambenih proizvoda, PEVEX d.d. izdvaja se prepoznatljivošću i posebnošću u odnosu na ostale prisutne “uradi sam” trgovine."
+    },
+    {
+      "id": "b9236153-c901-45f1-a988-a8265096a010",
+      "name": "Locastic",
+      "description": "Locastic je agencija specijalizirana za razvoj web i mobilnih aplikacija te savjetovanje, prisutna na tržištu od 2011. godine. Mladi tim stručnjaka čine programeri, dizajneri i UX stručnjaci sa višegodišnjim iskustvom u svom području."
+    },
+    {
+      "id": "40d6b072-cbe4-4a27-8615-4b6f6ada07f7",
+      "name": "Digitalna Dalmacija",
+      "description": "DIGITALNA DALMACIJA je HUB digitalne transformacije\nu Splitsko-dalmatinskoj županiji s ciljem jačanja IT/Tech sektora.\nPodučavamo DIGITALNE VJEŠTINE i stvaramo STARTUP EKOSUSTAV povezan putem lokalne TEHNOLOŠKE ZAJEDNICE !"
+    },
+    {
+      "id": "fceca0d2-48a7-499d-bd2d-16f43628c4d3",
+      "name": "Lorem Ipsum",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neque est, pharetra vitae sem et, rutrum interdum nulla. Aliquam sagittis eleifend mauris et consectetur. Vivamus in enim hendrerit, dapibus augue et, sodales nunc."
     }
   ]
 }

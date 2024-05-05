@@ -26,7 +26,7 @@ function OrganizationsModal({ setShowOrganizationsModal, handleDataRefresh, edit
     const [organization, setOrganization] = useState({
         id: uuidv4(),
         name: '',
-        workshops: [],
+        // workshops: [],
         description: ''
     })
 

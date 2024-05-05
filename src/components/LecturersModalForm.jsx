@@ -75,11 +75,11 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
             <div className='flex justify-evenly'>
                 <div className='flex items-center'>
                     <Input type='radio' name='gender' value='male' checked={lecturer.gender === 'male'} handleOnChange={handleOnChange} />
-                    <label className='pl-1'>Muškarac</label>
+                    <label className='pl-1 text-gray-500'>Muškarac</label>
                 </div>
                 <div className='flex items-center'>
                     <Input type='radio' name='gender' value='female' checked={lecturer.gender === 'female'} handleOnChange={handleOnChange} />
-                    <label className='pl-1'>Žena</label>
+                    <label className='pl-1 text-gray-500'>Žena</label>
                 </div>
             </div>
             <Select className='my-4' defaultValue={organizationsOptions.filter(org => org.value === lecturer.organization.id)} value={lecturer.organization.value} onChange={selectedOption => handleOnChangeSelectOrganization(selectedOption)} options={organizationsOptions} placeholder='Odaberite organizaciju predavača' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
