@@ -37,6 +37,22 @@
           "name": "React"
         }
       ]
+    },
+    {
+      "id": "2490e1cb-260a-4fad-92f1-e364991eb404",
+      "name": "Test",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed purus condimentum, ornare leo a, vestibulum neque. In ac est lobortis, ultricies urna commodo, feugiat augue. Ut venenatis diam vitae mi porttitor, eget ultricies mauris pulvinar.",
+      "organization": {
+        "id": "ae8b7394-2e7e-4904-b131-15213ec385f6",
+        "name": "Testna organizacija"
+      },
+      "topics": [
+        {
+          "id": "wordpress",
+          "name": "Wordpress"
+        }
+      ],
+      "gender": "male"
     }
   ],
   "organizacije": [

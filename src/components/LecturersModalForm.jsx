@@ -64,7 +64,7 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
         }
     }, [])
 
-    return isLoading ? <LoadingSpinner/> :
+    return isLoading ? <LoadingSpinner /> :
         <form className='flex flex-col h-max w-full' onSubmit={e => {
             e.preventDefault(); setIsSubmitting(true)
             if (editData) handlePut()
@@ -72,6 +72,16 @@ function LecturersModalForm({ isLoading, organizations, lecturer, setLecturer, s
         }}>
             {editData ? <h2 className='font-mina font-bold text-center text-2xl text-edit-blue'>Uredi podatke o predavaču</h2> : <h2 className='font-mina font-bold text-center text-2xl text-edit-blue'>Dodaj predavača</h2>}
             <Input type='text' name='name' value={lecturer.name} handleOnChange={handleOnChange} placeholder='Ime i prezime predavača' />
+            <div className='flex justify-evenly'>
+                <div className='flex items-center'>
+                    <Input type='radio' name='gender' value='male' checked={lecturer.gender === 'male'} handleOnChange={handleOnChange} />
+                    <label className='pl-1'>Muškarac</label>
+                </div>
+                <div className='flex items-center'>
+                    <Input type='radio' name='gender' value='female' checked={lecturer.gender === 'female'} handleOnChange={handleOnChange} />
+                    <label className='pl-1'>Žena</label>
+                </div>
+            </div>
             <Select className='my-4' defaultValue={organizationsOptions.filter(org => org.value === lecturer.organization.id)} value={lecturer.organization.value} onChange={selectedOption => handleOnChangeSelectOrganization(selectedOption)} options={organizationsOptions} placeholder='Odaberite organizaciju predavača' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
             <Select className='my-4' isMulti defaultValue={topicsOptions.filter(topic => lecturer.topics.find(obj => obj.id === topic.value))} value={lecturer.topics.name} onChange={selectedOptions => handleOnChangeSelectTopics(selectedOptions)} options={topicsOptions} placeholder='Odaberite teme koje predavač predaje' menuPortalTarget={document.body} styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }} required />
             <Input type='textarea' name='bio' value={lecturer.bio} handleOnChange={handleOnChange} placeholder='Opis predavača' />

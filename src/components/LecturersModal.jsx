@@ -29,7 +29,8 @@ function LecturersModal({ setShowLecturersModal, handleDataRefresh, editDataId }
             name: '',
             bio: '',
             organization: '',
-            topics: []
+            topics: [],
+            gender: ''
         }
     )
 
