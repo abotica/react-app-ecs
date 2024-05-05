@@ -16,7 +16,7 @@ function Table({ dataArray, showDataProperties, setShowDeleteAffirmationModal, s
         <table className='w-full h-full text-center'>
             <thead>
                 <tr>
-                    {headers[location.pathname]?.map((header, index) => <th className='font-mina font-bold text-edit-blue py-5' key={index}>{header}</th>)}
+                    {dataArray.length !== 0 && headers[location.pathname]?.map((header, index) => <th className='font-mina font-bold text-edit-blue py-5' key={index}>{header}</th>)}
                 </tr>
             </thead>
             <tbody>
