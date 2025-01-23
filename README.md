@@ -1,8 +1,18 @@
-# React + Vite
+# Edit Code School
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+This application is my final project for Edit Code School React course. It won me certificate of completion and place among top 20 participants.
 
-Currently, two official plugins are available:
+It is a showcase of my skills in React and also uses json-server to simulate a backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Home page witch information about the school
+- Courses page with list of courses
+- Lecture page with list of lectures
+- Filtering courses and lecturers
+- Fake administrator login
+- Admin can access admin panel
+- Admin can add, edit and delete courses, lecturers and organizations sponsoring the courses
+
+## Application Preview
