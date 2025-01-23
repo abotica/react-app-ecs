@@ -16,3 +16,6 @@ It is a showcase of my skills in React and also uses json-server to simulate a b
 - Admin can add, edit and delete courses, lecturers and organizations sponsoring the courses
 
 ## Application Preview
+
+https://github.com/user-attachments/assets/6385f772-d1d8-48ad-89e8-cf5ff7d3c79b
+
